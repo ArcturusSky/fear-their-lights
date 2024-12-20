@@ -45,8 +45,7 @@ L'originalité de ce jeu réside dans l'ajout d'une touche de survival horror. C
   - 🗺️ **Carte divisée en échiquier** : Les zones s'autodétruisent et deviennent inaccessibles, avec des décors géométriques pour se cacher.
   - 🗡️ **Système de combat** : Armes de mêlée avec gestion des hitboxes.
   - ⏱️ **Chronomètre** : Gestion du temps de jeu.
-  - 🔦 **Éclairage** : Lampe de poche pour chaque joueur.
-  - ❤️ **Barre de vie** : Suivi de l'état des joueurs.
+  - 🔦 **Éclairage** : Lampe de poche pour chaque joueur vu que la map est dans le noir.
   - 🏆 **Scoreboard** : Affichage des scores en temps réel.
   - 🎨 **Animations et design pixel art** : Esthétique visuelle engageante.
 
@@ -58,6 +57,7 @@ L'originalité de ce jeu réside dans l'ajout d'une touche de survival horror. C
     - Réinitialisation et modification du mot de passe.
 
 - 🚀 **Fonctionnalités Post-MVP**
+  - ❤️ **Barre de vie** : Suivi de l'état des joueurs.
   - 🔫 **Armes à feu** : Ajout d'armes variées pour diversifier le gameplay. (à débattre)
   - 👨‍🚀 **Classes de personnages** : Assassin, Soldat, Tank pour des styles de jeu variés.
   - 💪 **Power-ups** : Augmentation temporaire de vie, armure, dégâts, vitesse, éclairage.
@@ -183,21 +183,21 @@ Pour garantir le succès du projet, il est recommandé :
 
 ## 👥 Organisation et Planification du Projet
 
-👨‍💻 **Proposition de répartition des Rôles**
-
-PROPOSITION de répartition à étudier:
+👨‍💻 **Répartition des Rôles**
 
 **Besse Anne-Cécile**
 - Développement Frontend (Gamedesign et visuels)
-- Conception du Gameplay
-- Gestion du Projet (rédaction etc)
+- Gestion du Projet
 
 **Puertas José**
 - Développement Backend
-- DevOps et Déploiement
 - Intégration Frontend/Backend
 
-Cette répartition est uniquement une proposition
+**Ensemble**
+- Déploiement
+- Intégration Frontend/backend
+- Décisions visuelles
+- Conception du Gameplay (partage quand ça arrivera)
 
 📅 **Planification des Tâches pour le MVP (Mars 2025)**
 
@@ -212,7 +212,7 @@ Cette répartition est uniquement une proposition
 
 Les fonctionnalités additionnelles pourraient inclure :
 
-- Ajout d'armes à feu (à débattre)Création d'un boss redoutable nommé "The Night Hunter"
+- Ajout d'armes à feu (à débattre)
 - Ajout sonore pour enrichir l'expérience immersive
 - Implémentation détaillée des classes de personnages variées (Assassin, Soldat, Tank, autres ?)
 - Intégration de power-ups
