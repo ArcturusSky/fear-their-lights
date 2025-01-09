@@ -224,10 +224,12 @@ Additional features could include:
 
 From Arc [Anne-Cécile]: Creating a game has always been a dream for me, and working on this project is therefore truly important. This project is ambitious and will probably need to be scaled down but is feasible while considering the requirements of RNCP5.
 
+From Zetrayo [José]: I have always wanted to make a videogame, and the RNCP5 gives me the best excuse to finally make one. This game is going to test every single skill that I obtained while studying at Holberton School, but it's going to be worth it at the end.
+
 ## 👨‍👩‍👧‍👦 Authors
 
 - **Besse Anne-Cécile**: [GitHub Link](https://github.com/ArcturusSky)
-- **Puertas José**: [GitHub Link](https://github.com/Zetrayos)
+- **Puertas José**: [GitHub Link](https://github.com/Zetrayo)
 
 ## 📜 License
 
