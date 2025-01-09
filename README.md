@@ -1,273 +1,234 @@
-- [🎮 Fear their Lights - Projet de Jeu Multijoueur 2D](#-fear-their-lights---projet-de-jeu-multijoueur-2d)
-  - [📝 Description du Projet](#-description-du-projet)
-  - [🛠️ Fonctionnalités](#️-fonctionnalités)
-  - [📋 Vue d'Ensemble des Technologies](#-vue-densemble-des-technologies)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-    - [Base de Données](#base-de-données)
-    - [Déploiement \& Infrastructure](#déploiement--infrastructure)
-  - [🚀 Justification Technique Détaillée](#-justification-technique-détaillée)
-  - [🛠 Architecture Technique](#-architecture-technique)
-  - [🎯 Objectifs Techniques](#-objectifs-techniques)
-  - [💡 Recommandations Complémentaires](#-recommandations-complémentaires)
-  - [👥 Organisation et Planification du Projet](#-organisation-et-planification-du-projet)
-  - [Conclusion](#conclusion)
-  - [👨‍👩‍👧‍👦 Auteurs](#-auteurs)
-  - [📜 Licence](#-licence)
+# 🎮 Fear their Lights - 2D Multiplayer Game Project
 
+## 📝 Project Description
 
+This project involves developing a 2D multiplayer "Battle Royale" video game playable in a browser. The goal is to create an immersive and competitive game with the following characteristics:
 
-# 🎮 Fear their Lights - Projet de Jeu Multijoueur 2D
+- 🌑 **Map shrouded in darkness**: Players will have to navigate in a dark environment, making each movement strategic.
+- 💥 **Progressive map destruction**: Play areas will become inaccessible over time, adding constant pressure.
+- ⚔️ **Real-time combat system**: Players will use melee weapons with precise hitbox management.
+- 👤 **User account management**: A complete system for creating, deleting, and managing accounts.
 
-## 📝 Description du Projet
+The game is designed to be extensible, with additional features planned after the delivery of the MVP (Minimum Viable Product).
 
-Ce projet consiste à développer un jeu vidéo multijoueur en 2D de type "Battle Royale" jouable sur navigateur. L'objectif est de créer un jeu immersif et compétitif avec les caractéristiques suivantes :
+🌟 **Originality**
 
-- 🌑 **Carte plongée dans l'obscurité** : Les joueurs devront naviguer dans un environnement sombre, rendant chaque mouvement stratégique.
-- 💥 **Destruction progressive de la carte** : Les zones de jeu deviendront inaccessibles au fur et à mesure, ajoutant une pression constante.
-- ⚔️ **Système de combat en temps réel** : Les joueurs utiliseront des armes de mêlée avec une gestion précise des hitboxes.
-- 👤 **Gestion des comptes utilisateurs** : Un système complet pour la création, la suppression et la gestion des comptes.
+The originality of this game lies in the addition of a survival horror touch. Unlike other battle royale games, players won't be able to simply run and shoot recklessly; they'll need to be strategic and exercise self-control.
 
-Le jeu est conçu pour être extensible, avec des fonctionnalités supplémentaires prévues après la livraison du MVP (Minimum Viable Product).
-
-🌟 **L'Originalité**
-
-L'originalité de ce jeu réside dans l'ajout d'une touche de survival horror. Contrairement à d'autres jeux de type battle royale, les joueurs ne pourront pas simplement courir et tirer à tout va ; ils devront faire preuve de stratégie et de contrôle personnel.
-
----
-
-## 🛠️ Fonctionnalités
+## 🛠️ Features
 
 **MVP (Minimum Viable Product)**
 
-- 🕹️ **Fonctionnalités Jeu :**
-  - 👥 **Multijoueur** : Jusqu'à 10-15 joueurs par carte.
-  - 🗺️ **Carte divisée en échiquier** : Les zones s'autodétruisent et deviennent inaccessibles, avec des décors géométriques pour se cacher.
-  - 🗡️ **Système de combat** : Armes de mêlée avec gestion des hitboxes.
-  - ⏱️ **Chronomètre** : Gestion du temps de jeu.
-  - 🔦 **Éclairage** : Lampe de poche pour chaque joueur vu que la map est dans le noir.
-  - 🏆 **Scoreboard** : Affichage des scores en temps réel.
-  - 🎨 **Animations et design pixel art** : Esthétique visuelle engageante.
+- 🕹️ **Game Features:**
+  - 👥 **Multiplayer**: Up to 10-15 players per map.
+  - 🗺️ **Chessboard-divided map**: Areas self-destruct and become inaccessible, with geometric scenery to hide.
+  - 🗡️ **Combat system**: Melee weapons with hitbox management.
+  - ⏱️ **Timer**: Game time management.
+  - 🔦 **Lighting**: Flashlight for each player since the map is in darkness.
+  - 🏆 **Scoreboard**: Real-time score display.
+  - 🎨 **Pixel art animations and design**: Engaging visual aesthetic.
 
-- 🖥️ **Fonctionnalités Non-Jeu :**
-  - 📊 **Menu de navigation** : Interface utilisateur fluide et intuitive.
-  - 🔐 **Gestion des comptes utilisateurs** :
-    - Création de compte avec email.
-    - Suppression de compte.
-    - Réinitialisation et modification du mot de passe.
+- 🖥️ **Non-Game Features:**
+  - 📊 **Navigation menu**: Smooth and intuitive user interface.
+  - 🔐 **User account management**:
+    - Account creation with email.
+    - Account deletion.
+    - Password reset and modification.
 
-- 🚀 **Fonctionnalités Post-MVP**
-  - ❤️ **Barre de vie** : Suivi de l'état des joueurs.
-  - 🔫 **Armes à feu** : Ajout d'armes variées pour diversifier le gameplay. (à débattre)
-  - 👨‍🚀 **Classes de personnages** : Assassin, Soldat, Tank pour des styles de jeu variés.
-  - 💪 **Power-ups** : Augmentation temporaire de vie, armure, dégâts, vitesse, éclairage.
-  - 🎵 **Animations et décors améliorés** pour enrichir l'expérience visuelle.
-  - 🏆 **Modes de jeu supplémentaires** : Solo, Team vs Team, Respawn.
-  - 👹 **Boss (The Night Hunter)** : Un défi supplémentaire pour les joueurs.
+- 🚀 **Post-MVP Features**
+  - ❤️ **Health bar**: Tracking player status.
+  - 🔫 **Firearms**: Addition of varied weapons to diversify gameplay. (to be discussed)
+  - 👨‍🚀 **Character classes**: Assassin, Soldier, Tank for varied playstyles.
+  - 💪 **Power-ups**: Temporary increase in health, armor, damage, speed, lighting.
+  - 🎵 **Improved animations and scenery** to enrich the visual experience.
+  - 🏆 **Additional game modes**: Solo, Team vs Team, Respawn.
+  - 👹 **Boss (The Night Hunter)**: An additional challenge for players.
 
----
-
-## 📋 Vue d'Ensemble des Technologies
+## 📋 Technology Overview
 
 ### Frontend
-- 🖼️ **Framework**: [Svelte](https://svelte.dev/) - Pour une interface légère et réactive.
-- 🎨 **Rendu Graphique**: HTML5 Canvas - Pour le rendu 2D du jeu.
-- 🎮 **Bibliothèque de Jeu**: [Phaser.js](https://phaser.io/) - Pour faciliter le développement du gameplay.
+- 🖼️ **Framework**: [Svelte](https://svelte.dev/) - For a lightweight and reactive interface.
+- 🎨 **Graphic Rendering**: HTML5 Canvas - For 2D game rendering.
+- 🎮 **Game Library**: [Phaser.js](https://phaser.io/) - To facilitate gameplay development.
 
 ### Backend
-- 🖥️ **Runtime**: [Node.js](https://nodejs.org/) - Environnement JavaScript côté serveur.
-- 🌐 **Framework Web**: [Express.js](https://expressjs.com/) - Pour gérer les APIs REST.
-- 🔌 **Communication Temps Réel**: [Socket.IO](https://socket.io/) - Pour la synchronisation des joueurs en temps réel.
-- 🔒 **Authentification**: [Passport.js](http://www.passportjs.org/) - Pour sécuriser les comptes utilisateurs.
+- 🖥️ **Runtime**: [Node.js](https://nodejs.org/) - Server-side JavaScript environment.
+- 🌐 **Web Framework**: [Express.js](https://expressjs.com/) - To handle REST APIs.
+- 🔌 **Real-Time Communication**: [Socket.IO](https://socket.io/) - For real-time player synchronization.
+- 🔒 **Authentication**: [Passport.js](http://www.passportjs.org/) - To secure user accounts.
 
-### Base de Données
-- 🗄️ **Base de Données**: [MongoDB](https://www.mongodb.com/) - Pour stocker les données utilisateurs et les informations du jeu.
-- 📦 **ODM (Object Document Mapper)**: [Mongoose](https://mongoosejs.com/) - Pour interagir facilement avec MongoDB.
+### Database
+- 🗄️ **Database**: [MongoDB](https://www.mongodb.com/) - To store user data and game information.
+- 📦 **ODM (Object Document Mapper)**: [Mongoose](https://mongoosejs.com/) - To easily interact with MongoDB.
 
-### Déploiement & Infrastructure
-- 🐳 **Conteneurisation**: [Docker](https://www.docker.com/) - Pour isoler les services et faciliter le déploiement.
-- ⚙️ **Orchestration**: Docker Compose - Pour gérer plusieurs conteneurs facilement.
-- ☁️ **Hébergement**: [Heroku](https://www.heroku.com/) ou [DigitalOcean](https://www.digitalocean.com/) - Pour déployer l'application sur le cloud.
+### Deployment & Infrastructure
+- 🐳 **Containerization**: [Docker](https://www.docker.com/) - To isolate services and facilitate deployment.
+- ⚙️ **Orchestration**: Docker Compose - To easily manage multiple containers.
+- ☁️ **Hosting**: [Heroku](https://www.heroku.com/) or [DigitalOcean](https://www.digitalocean.com/) - To deploy the application to the cloud.
 
----
-
-## 🚀 Justification Technique Détaillée
+## 🚀 Detailed Technical Justification
 
 **Svelte**
-- 🔍 Pourquoi ?
-  - Compilation à la compilation (compile-time).
-  - Bundle minimal pour des performances optimales.
-  - Performances supérieures aux frameworks traditionnels.
-  - Courbe d'apprentissage douce, idéale pour les nouveaux développeurs.
+- 🔍 Why?
+  - Compile-time compilation.
+  - Minimal bundle for optimal performance.
+  - Superior performance compared to traditional frameworks.
+  - Gentle learning curve, ideal for new developers.
 
 **HTML5 Canvas & Phaser**
-- ✅ Avantages
-  - Rendu 2D haute performance adapté aux jeux rapides.
-  - Gestion native des animations, facilitant le développement visuel.
-  - Compatible pixel art pour une esthétique rétro attrayante.
+- ✅ Advantages
+  - High-performance 2D rendering suitable for fast-paced games.
+  - Native animation management, facilitating visual development.
+  - Pixel art compatible for an attractive retro aesthetic.
 
 **Node.js & Express**
-- 💻 Bénéfices
-  - JavaScript universel (frontend/backend), simplifiant le développement full-stack.
-  - Écosystème npm riche offrant une multitude de bibliothèques utiles.
-  - Gestion asynchrone performante, essentielle pour les applications en temps réel.
+- 💻 Benefits
+  - Universal JavaScript (frontend/backend), simplifying full-stack development.
+  - Rich npm ecosystem offering a multitude of useful libraries.
+  - Efficient asynchronous management, essential for real-time applications.
 
 **Socket.IO**
-- ⚡ Caractéristiques Clés
-  - Communication bidirectionnelle en temps réel entre clients et serveur.
-  - Gestion automatique des connexions et déconnexions des utilisateurs.
-  - Événements personnalisables permettant une flexibilité dans le développement du gameplay.
+- ⚡ Key Features
+  - Real-time bidirectional communication between clients and server.
+  - Automatic management of user connections and disconnections.
+  - Customizable events allowing flexibility in gameplay development.
 
 **MongoDB**
-- 📈 Avantages pour le Projet
-  - Schéma flexible permettant d'adapter facilement la base aux besoins changeants du jeu.
-  - Stockage natif des données JSON facilitant l'interaction avec les données du jeu.
+- 📈 Project Advantages
+  - Flexible schema allowing easy adaptation of the database to changing game needs.
+  - Native JSON data storage facilitating interaction with game data.
 
 **Docker**
-- 🌐 Bénéfices
-  - Environnement de développement reproductible garantissant que tous les développeurs travaillent dans un cadre identique.
-  - Isolation des services permettant une meilleure gestion des dépendances.
-  - Scalabilité
-
----
+- 🌐 Benefits
+  - Reproducible development environment ensuring all developers work in an identical framework.
+  - Service isolation allowing better dependency management.
+  - Scalability
 
 ## 🛠 Architecture Technique
 
 ```text
 project-root/
 │
-├── client/               # Frontend Svelte
-│   └── src/
-│       ├── components/
-│       ├── stores/
-│       └── game/
+├── client/ # Frontend Svelte
+│ └── src/
+│ ├── components/
+│ ├── stores/
+│ └── game/
 │
-├── server/               # Backend Node.js
-│   ├── models/
-│   ├── controllers/
-│   ├── routes/
-│   └── sockets/
+├── server/ # Backend Node.js
+│ ├── models/
+│ ├── controllers/
+│ ├── routes/
+│ └── sockets/
 │
-├── database/             # Configuration MongoDB
+├── database/ # Configuration MongoDB
 │
 ├── docker-compose.yml
 ├── Dockerfile
 └── README.md
-
 ```
 
-## 🎯 Objectifs Techniques
+## 🎯 Technical Objectives
 
-Les objectifs techniques principaux incluent :
+The main technical objectives include:
+- Optimal performance to ensure a smooth experience even with multiple simultaneous players.
+- Smooth user experience through an intuitive and responsive interface.
+- Maintainable and modular code facilitating future updates and collaboration between developers.
+- Future scalability to easily integrate additional features or handle a growing number of users.
+- Compliance with RNCP5 requirements to ensure the project meets required academic standards.
 
-- Performance optimale pour assurer une expérience fluide même avec plusieurs joueurs simultanés.
-- Expérience utilisateur fluide grâce à une interface intuitive et réactive.
-- Code maintenable et modulaire facilitant les mises à jour futures et la collaboration entre développeurs.
-- Scalabilité future pour intégrer facilement des fonctionnalités supplémentaires ou gérer un nombre croissant d'utilisateurs.
-- Conformité aux exigences du RNCP5 afin d'assurer que le projet répond aux standards académiques requis.
+## 💡 Additional Recommendations
 
-## 💡 Recommandations Complémentaires
+To ensure project success, it is recommended:
+- To use TypeScript for enhanced static typing, which helps avoid certain common types of errors during development.
+- To implement unit and integration tests to ensure code robustness before each major update or feature addition.
+- To set up continuous integration (CI/CD) to automate the testing and deployment process, thus reducing the risk of human errors during code updates.
+- To rigorously document the architecture and technical choices made throughout the project so that each member can quickly understand the entire system.
 
-Pour garantir le succès du projet, il est recommandé :
+## 👥 Project Organization and Planning
 
-- D'utiliser TypeScript pour un typage statique renforcé, ce qui aide à éviter certains types d'erreurs courantes lors du développement.
-- D'implémenter des tests unitaires et d'intégration afin d'assurer la robustesse du code avant chaque mise à jour majeure ou ajout de fonctionnalité.
-- De mettre en place une intégration continue (CI/CD) afin d'automatiser le processus de test et déploiement, réduisant ainsi le risque d'erreurs humaines lors des mises à jour du code.
-- De documenter rigoureusement l'architecture et les choix techniques pris tout au long du projet afin que chaque membre puisse comprendre rapidement l'ensemble du système.
-
----
-
-**🚧 Note importante**: L'architecture proposée est un point de départ, un brouillon à faire évoluer.
-
----
-
-## 👥 Organisation et Planification du Projet
-
-👨‍💻 **Répartition des Rôles**
+👨‍💻 **Role Distribution**
 
 **Besse Anne-Cécile**
-- Développement Frontend (Gamedesign et visuels)
-- Gestion du Projet
+- Frontend Development (Game design and visuals)
+- Project Management
 
 **Puertas José**
-- Développement Backend
-- Intégration Frontend/Backend
+- Backend Development
+- Frontend/Backend Integration
 
-**Ensemble**
-- Déploiement
-- Intégration Frontend/backend
-- Décisions visuelles
-- Conception du Gameplay (partage quand ça arrivera)
+**Together**
+- Deployment
+- Frontend/backend integration
+- Visual decisions
+- Gameplay design (sharing when it happens)
 
-📅 **Planification des Tâches pour le MVP (Mars 2025)**
+📅 **Task Planning for MVP (March 2025)**
 
-**MVP (Mars 2025)**
-- Jeu multijoueur fonctionnel avec carte destructible
-- Système de combat basique
-- Authentification et gestion des utilisateurs
-- Interface utilisateur de base et scoreboard
-- Animations et design de jeu
+**MVP (March 2025)**
+- Functional multiplayer game with destructible map
+- Basic combat system
+- User authentication and management
+- Basic user interface and scoreboard
+- Game animations and design
 
-**Fonctionnalités Post-MVP (à planifier après Mars 2025)**
+**Post-MVP Features (to be planned after March 2025)**
 
-Les fonctionnalités additionnelles pourraient inclure :
+Additional features could include:
+- Addition of firearms (to be discussed)
+- Sound addition to enrich the immersive experience
+- Detailed implementation of varied character classes (Assassin, Soldier, Tank, others?)
+- Integration of power-ups
+- Further development on various modes like "Solo" or "Team vs Team"
+- Creation of a formidable boss named "The Night Hunter"
 
-- Ajout d'armes à feu (à débattre)
-- Ajout sonore pour enrichir l'expérience immersive
-- Implémentation détaillée des classes de personnages variées (Assassin, Soldat, Tank, autres ?)
-- Intégration de power-ups
-- Développement supplémentaire sur divers modes comme "Solo" ou "Team vs Team"
-- Création d'un boss redoutable nommé "The Night Hunter"
+**Planning proposed by AI, to be studied**
 
-**Planification proposée par IA, à étudier**
+**Week 1-2: Setup and Prototype**
+- [ ] Set up development environment (Docker, Git)
+- [ ] Create a simple map with destructible cells (Canvas/Phaser)
+- [ ] Implement basic player movement
 
-**Semaine 1-2 : Mise en place et Prototype**
-- [ ] Configurer l'environnement de développement (Docker, Git)
-- [ ] Créer une map simple avec cases destructibles (Canvas/Phaser)
-- [ ] Implémenter le déplacement basique des joueurs
+**Week 3-4: Initial Backend and Authentication**
+- [ ] Configure Node.js server with Express
+- [ ] Set up user authentication with MongoDB
+- [ ] Implement WebSockets for real-time communication
 
-**Semaine 3-4 : Backend Initial et Authentification**
-- [ ] Configurer le serveur Node.js avec Express
-- [ ] Mettre en place l'authentification utilisateur avec MongoDB
-- [ ] Implémenter les WebSockets pour la communication en temps réel
+**Week 5-6: Basic Gameplay**
+- [ ] Add flashlight mechanic
+- [ ] Implement simple combat system (hitbox)
+- [ ] Create game timer
 
-**Semaine 5-6 : Gameplay de Base**
-- [ ] Ajouter la mécanique de lampe de poche
-- [ ] Implémenter le système de combat simple (hitbox)
-- [ ] Créer le chronomètre de jeu
+**Week 7-8: Integration and Synchronization**
+- [ ] Synchronize real-time data between players
+- [ ] Implement progressive map destruction
+- [ ] Add player health bar
 
-**Semaine 7-8 : Intégration et Synchronisation**
-- [ ] Synchroniser les données en temps réel entre les joueurs
-- [ ] Implémenter la destruction progressive de la carte
-- [ ] Ajouter la barre de vie des joueurs
+**Week 9-10: User Interface and Menus**
+- [ ] Create main menu and navigation interface
+- [ ] Develop real-time scoreboard
+- [ ] Implement game session management
 
-**Semaine 9-10 : Interface Utilisateur et Menus**
-- [ ] Créer le menu principal et l'interface de navigation
-- [ ] Développer le scoreboard en temps réel
-- [ ] Implémenter la gestion des sessions de jeu
+**Week 11-12: Testing, Optimization, and Finalization**
+- [ ] Conduct thorough testing with multiple players
+- [ ] Optimize performance for 10-15 simultaneous players
+- [ ] Fix bugs and refine user experience
 
-**Semaine 11-12 : Tests, Optimisation et Finalisation**
-- [ ] Effectuer des tests approfondis avec plusieurs joueurs
-- [ ] Optimiser les performances pour 10-15 joueurs simultanés
-- [ ] Corriger les bugs et peaufiner l'expérience utilisateur
-
-🤝 **Modalités d'Échange**
-
-- 💬 Contact permanent via Discord pour échanger rapidement sur l'avancement ou résoudre les problèmes rencontrés.
-- 👀 Revue de code mutuelle après chaque fonctionnalité majeure afin d'assurer la qualité du code avant intégration dans la branche principale.
-- 📊 Utilisation d'un tableau Kanban (typeTrello) pour suivre l'avancement des tâches assignées à chacun ainsi que celles qui restent à faire ou à revoir.
-- 📓 Mise à jour régulière du [journal de bord](./Documentation/MODELEjournal_de_bord.md) après chaque session afin d'avoir un suivi clair sur ce qui a été réalisé.
-
+🤝 **Exchange Modalities**
+- 💬 Permanent contact via Discord to quickly exchange on progress or solve encountered problems.
+- 👀 Mutual code review after each major feature to ensure code quality before integration into the main branch.
+- 📊 Use of a Kanban board (Trello-type) to track the progress of tasks assigned to each person as well as those that remain to be done or reviewed.
+- 📓 Regular update of the [logbook](./Documentation/MODELEjournal_de_bord.md) after each session to have a clear follow-up on what has been accomplished.
 
 ## Conclusion
 
-De Arc [Anne-Cécile]: Créer un jeu à toujours été un rêve pour moi et travailler sur ce projet est donc réellement important. Ce projet est ambitieux et probablement devra être revu à la baisse mais faisable tout en considérant les exigeances du RNCP5
+From Arc [Anne-Cécile]: Creating a game has always been a dream for me, and working on this project is therefore truly important. This project is ambitious and will probably need to be scaled down but is feasible while considering the requirements of RNCP5.
 
----
+## 👨‍👩‍👧‍👦 Authors
 
-## 👨‍👩‍👧‍👦 Auteurs
-- **Besse Anne-Cécile** : [Lien GitHub](https://github.com/ArcturusSky)
-- **Puertas José** : [Lien GitHub](https://github.com/Zetrayos)
+- **Besse Anne-Cécile**: [GitHub Link](https://github.com/ArcturusSky)
+- **Puertas José**: [GitHub Link](https://github.com/Zetrayos)
 
-## 📜 Licence
-Ce projet est sous licence [MIT](LICENSE).
+## 📜 License
+
+This project is under the [MIT](LICENSE) license.
