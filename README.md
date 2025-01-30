@@ -49,7 +49,7 @@ The originality of this game lies in the addition of a survival horror touch. Un
 ### Frontend
 - 🖼️ **Framework**: [Svelte](https://svelte.dev/) - For a lightweight and reactive interface.
 - 🎨 **Graphic Rendering**: HTML5 Canvas - For 2D game rendering.
-- 🎮 **Game Library**: [Phaser.js](https://phaser.io/) - To facilitate gameplay development.
+- 🎮 **Game Library**: [Phaser.io](https://phaser.io/) - To facilitate gameplay development.
 
 ### Backend
 - 🖥️ **Runtime**: [Node.js](https://nodejs.org/) - Server-side JavaScript environment.
