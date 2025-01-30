@@ -54,12 +54,12 @@ The originality of this game lies in the addition of a survival horror touch. Un
 ### Backend
 - 🖥️ **Runtime**: [Node.js](https://nodejs.org/) - Server-side JavaScript environment.
 - 🌐 **Web Framework**: [Express.js](https://expressjs.com/) - To handle REST APIs.
-- 🔌 **Real-Time Communication**: [Socket.IO](https://socket.io/) - For real-time player synchronization.
-- 🔒 **Authentication**: [Passport.js](http://www.passportjs.org/) - To secure user accounts.
+- 🔌 **Real-Time Communication**: [Socket.IO](https://socket.io/) - For real-time player synchronization    
 
 ### Database
-- 🗄️ **Database**: [MongoDB](https://www.mongodb.com/) - To store user data and game information.
-- 📦 **ODM (Object Document Mapper)**: [Mongoose](https://mongoosejs.com/) - To easily interact with MongoDB.
+- 🗄️ **Database**: [Supabase](https://supabase.com/) - A PostgreSQL-based database to store user data, game sessions, and scores.
+- 🛠️ **ORM (Object Relational Mapper)**: [SQLAlchemy](https://www.sqlalchemy.org/) - To interact with the PostgreSQL database efficiently.
+- 🔐 **Authentication**: Supabase built-in auth system to handle user registration and login.
 
 ### Deployment & Infrastructure
 - 🐳 **Containerization**: [Docker](https://www.docker.com/) - To isolate services and facilitate deployment.
