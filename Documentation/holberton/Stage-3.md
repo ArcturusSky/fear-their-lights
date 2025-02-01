@@ -48,9 +48,19 @@ The concept is a "Battle royal" completly in the dark. Players will have to be t
 
 ### MVP scope
 
+In the MVP we decided on:
+- Functional multiplayer game with destructible map
+- Basic combat system
+- User authentication and management
+- Basic user interface and scoreboard
+- Basic game design
+
 ## User Stories & Mockups
 
 ### User stories (MoSCoW Prioritizations)
+
+
+To lighten this document, you can find all the [user stories in this link](./User_stories.md)
 
 ### Mockups (Main Screens & UI Elements)
 
