@@ -2,6 +2,16 @@
 
 ## Sommaire
 
+*- [Stage 3: Technical Documentation \& System Design - User stories](#stage-3-technical-documentation--system-design---user-stories)
+  - [Sommaire](#sommaire)
+  - [Core Gameplay](#core-gameplay)
+    - [User Story: Player Movement](#user-story-player-movement)
+    - [User Story: Melee Combat](#user-story-melee-combat)
+    - [User Story: Health System](#user-story-health-system)
+    - [User Story: Map Destruction (Falling Tiles)](#user-story-map-destruction-falling-tiles)
+    - [User Story: Flashlight System](#user-story-flashlight-system)
+
+
 ## Core Gameplay
 
 ### User Story: Player Movement  
