@@ -2,17 +2,113 @@
 
 ## Sommaire
 
-*- [Stage 3: Technical Documentation \& System Design - User stories](#stage-3-technical-documentation--system-design---user-stories)
+- [Stage 3: Technical Documentation \& System Design - User stories](#stage-3-technical-documentation--system-design---user-stories)
   - [Sommaire](#sommaire)
-  - [Core Gameplay](#core-gameplay)
+  - [🎮 Core Gameplay](#-core-gameplay)
     - [User Story: Player Movement](#user-story-player-movement)
+      - [📌 Description](#-description)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done-)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow)
+      - [📝 Scenario](#-scenario)
+      - [🏗️ Technical Notes](#️-technical-notes)
+      - [🛠️ Tasks](#️-tasks)
+      - [🔗 Dependencies](#-dependencies)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable)
     - [User Story: Melee Combat](#user-story-melee-combat)
+      - [📌 Description](#-description-1)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--1)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-1)
+      - [📝 Scenario](#-scenario-1)
+      - [🏗️ Technical Notes](#️-technical-notes-1)
+      - [🛠️ Tasks](#️-tasks-1)
+      - [🔗 Dependencies](#-dependencies-1)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-1)
     - [User Story: Health System](#user-story-health-system)
+      - [📌 Description](#-description-2)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--2)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-2)
+      - [📝 Scenario](#-scenario-2)
+      - [🏗️ Technical Notes](#️-technical-notes-2)
+      - [🛠️ Tasks](#️-tasks-2)
+      - [🔗 Dependencies](#-dependencies-2)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-2)
     - [User Story: Map Destruction (Falling Tiles)](#user-story-map-destruction-falling-tiles)
+      - [📌 Description](#-description-3)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--3)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-3)
+      - [📝 Scenario](#-scenario-3)
+      - [🏗️ Technical Notes](#️-technical-notes-3)
+      - [🛠️ Tasks](#️-tasks-3)
+      - [🔗 Dependencies](#-dependencies-3)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-3)
     - [User Story: Flashlight System](#user-story-flashlight-system)
+      - [📌 Description](#-description-4)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--4)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-4)
+      - [📝 Scenario](#-scenario-4)
+      - [🏗️ Technical Notes](#️-technical-notes-4)
+      - [🛠️ Tasks](#️-tasks-4)
+      - [🔗 Dependencies](#-dependencies-4)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-4)
+  - [🛠️ Game Management](#️-game-management)
+    - [User Story: Multiplayer Session](#user-story-multiplayer-session)
+      - [📌 Description](#-description-5)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--5)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-5)
+      - [📝 Scenario](#-scenario-5)
+      - [🏗️ Technical Notes](#️-technical-notes-5)
+      - [🛠️ Tasks](#️-tasks-5)
+      - [🔗 Dependencies](#-dependencies-5)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-5)
+    - [User Story: Hitbox System](#user-story-hitbox-system)
+      - [📌 Description](#-description-6)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--6)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-6)
+      - [📝 Scenario](#-scenario-6)
+      - [🏗️ Technical Notes](#️-technical-notes-6)
+      - [🛠️ Tasks](#️-tasks-6)
+      - [🔗 Dependencies](#-dependencies-6)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-6)
+    - [User Story: Scoreboard System](#user-story-scoreboard-system)
+      - [📌 Description](#-description-7)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--7)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-7)
+      - [📝 Scenario](#-scenario-7)
+      - [🏗️ Technical Notes](#️-technical-notes-7)
+      - [🛠️ Tasks](#️-tasks-7)
+      - [🔗 Dependencies](#-dependencies-7)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-7)
+    - [User Story: Prevent Multi-Instances](#user-story-prevent-multi-instances)
+      - [📌 Description](#-description-8)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--8)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-8)
+      - [📝 Scenario](#-scenario-8)
+      - [🏗️ Technical Notes](#️-technical-notes-8)
+      - [🛠️ Tasks](#️-tasks-8)
+      - [🔗 Dependencies](#-dependencies-8)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-8)
+    - [User Story: Account Creation](#user-story-account-creation)
+      - [📌 Description](#-description-9)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--9)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-9)
+      - [📝 Scenario](#-scenario-9)
+      - [🏗️ Technical Notes](#️-technical-notes-9)
+      - [🛠️ Tasks](#️-tasks-9)
+      - [🔗 Dependencies](#-dependencies-9)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-9)
+    - [User Story: User Authentication](#user-story-user-authentication)
+      - [📌 Description](#-description-10)
+      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--10)
+      - [🔄 Priority (MoSCoW)](#-priority-moscow-10)
+      - [📝 Scenario](#-scenario-10)
+      - [🏗️ Technical Notes](#️-technical-notes-10)
+      - [🛠️ Tasks](#️-tasks-10)
+      - [🔗 Dependencies](#-dependencies-10)
+      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-10)
 
 
-## Core Gameplay
+
+## 🎮 Core Gameplay
 
 ### User Story: Player Movement  
 
@@ -207,3 +303,277 @@ As a player, I want to be able to use a flashlight, so that I can find my ennemi
 
 #### 🎨 Mockup (If Applicable)  
 ![Flashlights](../pics/[FTL]Mockup_flashlight.jpg)
+
+___
+
+## 🛠️ Game Management
+
+### User Story: Multiplayer Session  
+
+#### 📌 Description  
+As a player, I want to join a game session, so that I can play with other people.
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)   
+- ✅ The player can join a wait room to join a session.
+- ✅ The player can view other players in the session, with their actions synchronized in real time.  
+- ✅ The player can leave the session at any time, and their exit does not disrupt the other players.  
+- ✅ The session should handle player disconnections gracefully, allowing players to reconnect if they disconnect unexpectedly.  
+
+
+#### 🔄 Priority (MoSCoW)  
+🟥 Must Have  
+
+#### 📝 Scenario  
+**Given** the player on the welcome screen,  
+**When** they select to play a game, 
+**Then** they are successfully connected to the session with other players.  
+**And** they can see and interact with other players in the game world.  
+**And** they can leave or disconnect from the session without negatively affecting the other players.  
+
+#### 🏗️ Technical Notes  
+- **Session management:** Implement a system that allows players to either join existing sessions or create new ones.  
+- **Real-time synchronization:** Ensure player actions, movements, and interactions are synchronized across all players in the session.  
+- **Networking:** The session should handle network latency, ensuring smooth gameplay even with multiple players.  
+- **Player disconnection:** Players should be able to disconnect without affecting the gameplay for others.  
+
+#### 🛠️ Tasks  
+- [ ] Create a **wait room**  
+- [ ] Develop real-time **player synchronization** (position, actions, interactions).  
+- [ ] Handle **disconnection** events to maintain session stability.  
+- [ ] Ensure players can **leave** the session without causing disruption.  
+
+#### 🔗 Dependencies  
+- Network system (to handle multiplayer connections)  
+- Synchronization system (for real-time gameplay)   
+- Session management (for joining, creating, and leaving sessions)  
+
+#### 🎨 Mockup (If Applicable)  
+*No mockup needed for basic multiplayer session functionality.*
+
+___
+
+### User Story: Hitbox System  
+
+#### 📌 Description  
+As a player, I want the game to have a hitbox system, so that my character can interact with objects and other players in a realistic way.
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)  
+- ✅ The hitbox correctly detects collisions between characters, actions and objects (attacks, enemies).  
+- ✅ The hitbox updates in real time, accurately representing the character's position and movements.  
+- ✅ The hitbox prevents the character from moving through objects or other players.
+
+#### 🔄 Priority (MoSCoW)  
+🟥 Must Have  
+
+#### 📝 Scenario  
+**Given** the player is moving through the game world,  
+**When** they interact with another player,  
+**Then** the hitbox system detects the collision and responds accordingly.  
+**And** the player is prevented from moving through characters.
+**And** the hitbox updates dynamically with the player’s movements and actions (such as being attacked and dying).
+
+#### 🏗️ Technical Notes  
+- **Hitbox shape:** The hitbox should be represented as a circle.
+- **Collision detection:** Use **bounding box** or **circle-based** collision detection to identify when two hitboxes overlap.  
+- **Real-time updates:** The hitbox should update every frame to follow the player's movement and actions.  
+- **Optimizations:** Optimize the hitbox system to handle multiple players and objects without causing lag or performance issues.   
+
+#### 🛠️ Tasks  
+- [ ] Create the **hitbox shape** for the player.  
+- [ ] Implement **collision detection** between player hitbox and environment objects (e.g., walls, obstacles).   
+- [ ] Ensure the hitbox updates in **real-time** as the player moves.  
+
+#### 🔗 Dependencies  
+- Physics engine (for accurate collision detection and response)  
+- Character movement system (to update hitbox position based on player movement) 
+
+#### 🎨 Mockup (If Applicable)  
+*No mockup needed for basic hitbox functionality, but hitboxes could be visualized as debug shapes during testing.*
+
+____
+
+### User Story: Scoreboard System  
+
+#### 📌 Description  
+As a player, I want to see a scoreboard, so that I can track my performance and compare my score with other players.
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)  
+- ✅ The scoreboard displays player names and their respective scores.  
+- ✅ The scoreboard updates in real time as scores change.  
+- ✅ The scoreboard supports multiple players in a multiplayer session.  
+- ✅ The scoreboard is accessible at any time during gameplay.  
+- ✅ The scoreboard correctly sorts players based on their scores (highest to lowest).
+- ✅ The scoreboard remains visible after the game ends to display final rankings.  
+
+#### 🔄 Priority (MoSCoW)  
+🟧 Should Have
+
+#### 📝 Scenario  
+**Given** the player is in a game session,  
+**When** they eliminate an ennemy, they earn a "kill" 
+**Then** their score updates on the scoreboard in real time.  
+**And** the scoreboard updates dynamically for all players in a multiplayer session.  
+**And** players can view the scoreboard at any time during the game.  
+**And** the scoreboard remains visible at the end of the game for final rankings.  
+
+#### 🏗️ Technical Notes  
+- **Real-time updates:** Ensure the scoreboard updates dynamically whenever a player’s score changes.  
+- **Sorting system:** Implement automatic sorting to display the highest scores at the top.  
+- **Multiplayer integration:** Synchronize the scoreboard across all players in a multiplayer session.  
+- **UI accessibility:** Make the scoreboard accessible via a button press or menu.  
+- **Post-game visibility:** Keep the scoreboard visible after the match ends for final review.  
+
+#### 🛠️ Tasks  
+- [ ] Create a **UI component** to display player scores.  
+- [ ] Implement **real-time score updates** for individual players.  
+- [ ] Ensure **multiplayer synchronization** of the scoreboard.  
+- [ ] Implement **sorting logic** to rank players based on their scores.  
+- [ ] Make the scoreboard **accessible** via a button press or in-game menu.  
+- [ ] Keep the scoreboard **visible post-game** for final score review.  
+
+#### 🔗 Dependencies  
+- Player scoring system (to count number of kill and update scores)  
+- Multiplayer session system (to synchronize scores across players)  
+- UI system (to display and update the scoreboard in real time)  
+
+#### 🎨 Mockup (If Applicable)  
+![Scoreboard in game](../pics/[FTL]Mockup_Scoreboard.jpg)
+
+___
+
+### User Story: Prevent Multi-Instances  
+
+#### 📌 Description  
+As a player, I want to prevent multiple instances of the game from running simultaneously, so that I avoid conflicts and unintended behavior.
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)  
+- ✅ The game detects if another instance is already running.  
+- ✅ If another instance is detected, the new instance does not launch or prompts the player to close the existing one.  
+- ✅ The system prevents launching multiple instances even if the game is started from different shortcuts or executables.  
+- ✅ The check works across different operating systems (Windows, macOS, Linux).  
+- ✅ The prevention method does not interfere with legitimate game operations.  
+
+#### 🔄 Priority (MoSCoW)  
+🟥 Must Have  
+
+#### 📝 Scenario  
+**Given** the player attempts to launch the game,  
+**When** another instance of the game is already running,  
+**Then** the new instance does not start or prompts the player to close the existing instance.  
+**And** the system ensures that only one instance of the game runs at a time.  
+
+#### 🏗️ Technical Notes  
+- **Check IP:** Check if the current IP is already in a game or the username 
+- **User notification:** Provide a clear message if a second instance is attempted.  
+- **Performance impact:** The check should be lightweight and not affect game performance.  
+
+#### 🛠️ Tasks  
+- [ ] Implement **IP and username check**
+- [ ] Ensure the system **detects an existing instance** before launching a new one.  
+- [ ] Display a **user-friendly message** if another instance is detected.  
+- [ ] Test the solution across **different operating systems**.  
+- [ ] Optimize to avoid unnecessary resource consumption.  
+
+#### 🔗 Dependencies  
+- Operating system APIs for process management  
+- UI system for displaying messages to the player  
+
+#### 🎨 Mockup (If Applicable)  
+*No mockup needed for this functionality*
+
+___
+
+### User Story: Account Creation  
+
+#### 📌 Description  
+As a new player, I want to create an account, so that I can save my progress.  
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)  
+- ✅ Players can register using a unique **username** and **password**.  
+- ✅ Players can optionally register using an **email** for account recovery.  
+- ✅ Passwords are securely stored using **encryption** (hashing with salt).  
+- ✅ The system prevents duplicate usernames.  
+- ✅ The system provides error messages for invalid inputs (weak password, already taken username).    
+- ✅ The account is successfully created and saved in the database.  
+
+#### 🔄 Priority (MoSCoW)  
+🟥 Must Have  
+
+#### 📝 Scenario  
+**Given** a new player wants to create an account,  
+**When** they enter a unique username, password, and optional email,  
+**Then** the system validates their input.  
+**And** if the information is correct, the account is created successfully.  
+**And** if the username is taken or the password is weak, the player receives an appropriate error message.  
+
+#### 🏗️ Technical Notes  
+- **Security:** Store passwords securely using **bcrypt** or another hashing method.  
+- **Validation:** Check for **unique usernames**, valid email formats, and enforce **password strength** (min 8 characters, includes a number and special character).  
+- **Database Storage:** Use a **relational database (Supabase)** to store user data.  
+- **Error Handling:** Display **clear error messages** for invalid input or server issues.  
+
+#### 🛠️ Tasks  
+- [ ] Create a **registration form UI** (username, password, email).  
+- [ ] Implement **input validation** (username uniqueness, password strength, email format).  
+- [ ] Hash and store passwords **securely** in the database.  
+- [ ] Implement **email verification** system (if applicable).  
+- [ ] Display **user-friendly error messages** for registration failures.  
+- [ ] Save new accounts to the **database**.  
+
+#### 🔗 Dependencies  
+- Database system for storing user accounts  
+- Authenti cation system (for login & security)  
+- Email service (if email verification is required)  
+
+#### 🎨 Mockup (If Applicable)  
+![index](../pics/[FTL]Mockup_Index.jpg)
+
+
+---
+
+### User Story: User Authentication  
+
+#### 📌 Description  
+As a player, I want to log in to my account, so that I can access my saved progress 
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)  
+- ✅ Players can log in using their **username/email** and **password**.  
+- ✅ Passwords are securely verified using **hashing** (e.g., bcrypt).  
+- ✅ The system prevents **brute-force attacks**.  
+- ✅ If the credentials are incorrect, the player receives a **clear error message**.  
+- ✅ If the player forgets their password, they can **reset it via email**.  
+- ✅ The system maintains **active sessions** and supports **automatic re-login**  
+- ✅ Successful authentication grants access to **player data**.
+
+#### 🔄 Priority (MoSCoW)  
+🟥 Must Have  
+
+#### 📝 Scenario  
+**Given** a registered player wants to log in,  
+**When** they enter their correct username/email and password,  
+**Then** they are successfully authenticated and redirected to the main game screen.  
+**And** if they enter incorrect credentials, they receive an error message.  
+**And** if they forget their password, they can request a password reset via email.  
+
+#### 🏗️ Technical Notes  
+- **Secure Password Handling:** Use **bcrypt** or another secure hashing method for password storage.  
+- **Brute-Force Protection:** Implement **rate-limiting** and **CAPTCHA** after multiple failed attempts.  
+- **Session Management:** Support **JWT tokens** or **session-based authentication** for maintaining login state.  
+- **Password Reset:** Implement a **secure password reset flow** via email.  
+
+#### 🛠️ Tasks  
+- [ ] Create a **login UI** with username/email and password fields.  
+- [ ] Implement **secure password verification** using hashing.  
+- [ ] Implement **brute-force protection** (rate-limiting, CAPTCHA).  
+- [ ] Develop a **password reset system** via email.  
+- [ ] Implement **session handling** for persistent login.  
+- [ ] Ensure authentication grants **access to player data and multiplayer features**.  
+
+#### 🔗 Dependencies  
+- User account system (for authentication)  
+- Database system (for storing credentials)  
+- Email service (for password reset)  
+- Security measures (hashing, rate-limiting, CAPTCHA)  
+
+#### 🎨 Mockup (If Applicable)  
+*Same design/example as the index*
