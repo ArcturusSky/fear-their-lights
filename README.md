@@ -170,11 +170,12 @@ To ensure project success, it is recommended:
 - Basic combat system
 - User authentication and management
 - Basic user interface and scoreboard
-- Game animations and design
+- Basic game design
 
 **Post-MVP Features (to be planned after March 2025)**
 
 Additional features could include:
+- Adding better graphics
 - Addition of firearms (to be discussed)
 - Sound addition to enrich the immersive experience
 - Detailed implementation of varied character classes (Assassin, Soldier, Tank, others?)
