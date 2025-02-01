@@ -13,7 +13,7 @@
       - [🏗️ Technical Notes](#️-technical-notes)
       - [🛠️ Tasks](#️-tasks)
       - [🔗 Dependencies](#-dependencies)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable)
+      - [🎨 Mockup](#-mockup)
     - [User Story: Melee Combat](#user-story-melee-combat)
       - [📌 Description](#-description-1)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--1)
@@ -22,7 +22,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-1)
       - [🛠️ Tasks](#️-tasks-1)
       - [🔗 Dependencies](#-dependencies-1)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-1)
+      - [🎨 Mockup](#-mockup-1)
     - [User Story: Health System](#user-story-health-system)
       - [📌 Description](#-description-2)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--2)
@@ -31,7 +31,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-2)
       - [🛠️ Tasks](#️-tasks-2)
       - [🔗 Dependencies](#-dependencies-2)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-2)
+      - [🎨 Mockup](#-mockup-2)
     - [User Story: Map Destruction (Falling Tiles)](#user-story-map-destruction-falling-tiles)
       - [📌 Description](#-description-3)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--3)
@@ -40,7 +40,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-3)
       - [🛠️ Tasks](#️-tasks-3)
       - [🔗 Dependencies](#-dependencies-3)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-3)
+      - [🎨 Mockup](#-mockup-3)
     - [User Story: Flashlight System](#user-story-flashlight-system)
       - [📌 Description](#-description-4)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--4)
@@ -49,7 +49,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-4)
       - [🛠️ Tasks](#️-tasks-4)
       - [🔗 Dependencies](#-dependencies-4)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-4)
+      - [🎨 Mockup](#-mockup-4)
   - [🛠️ Game Management](#️-game-management)
     - [User Story: Multiplayer Session](#user-story-multiplayer-session)
       - [📌 Description](#-description-5)
@@ -59,7 +59,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-5)
       - [🛠️ Tasks](#️-tasks-5)
       - [🔗 Dependencies](#-dependencies-5)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-5)
+      - [🎨 Mockup](#-mockup-5)
     - [User Story: Hitbox System](#user-story-hitbox-system)
       - [📌 Description](#-description-6)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--6)
@@ -68,7 +68,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-6)
       - [🛠️ Tasks](#️-tasks-6)
       - [🔗 Dependencies](#-dependencies-6)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-6)
+      - [🎨 Mockup](#-mockup-6)
     - [User Story: Scoreboard System](#user-story-scoreboard-system)
       - [📌 Description](#-description-7)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--7)
@@ -77,7 +77,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-7)
       - [🛠️ Tasks](#️-tasks-7)
       - [🔗 Dependencies](#-dependencies-7)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-7)
+      - [🎨 Mockup](#-mockup-7)
     - [User Story: Prevent Multi-Instances](#user-story-prevent-multi-instances)
       - [📌 Description](#-description-8)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--8)
@@ -86,7 +86,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-8)
       - [🛠️ Tasks](#️-tasks-8)
       - [🔗 Dependencies](#-dependencies-8)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-8)
+      - [🎨 Mockup](#-mockup-8)
     - [User Story: Account Creation](#user-story-account-creation)
       - [📌 Description](#-description-9)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--9)
@@ -95,7 +95,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-9)
       - [🛠️ Tasks](#️-tasks-9)
       - [🔗 Dependencies](#-dependencies-9)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-9)
+      - [🎨 Mockup](#-mockup-9)
     - [User Story: User Authentication](#user-story-user-authentication)
       - [📌 Description](#-description-10)
       - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--10)
@@ -104,9 +104,7 @@
       - [🏗️ Technical Notes](#️-technical-notes-10)
       - [🛠️ Tasks](#️-tasks-10)
       - [🔗 Dependencies](#-dependencies-10)
-      - [🎨 Mockup (If Applicable)](#-mockup-if-applicable-10)
-
-
+      - [🎨 Mockup](#-mockup-10)
 
 ## 🎮 Core Gameplay
 
@@ -145,7 +143,7 @@ As a player, I want to move my character in the game, so that I can navigate the
 - Collision detection system  
 - Game map boundaries  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *No mockup needed for basic movement.*  
 
 ---
@@ -183,7 +181,7 @@ As a player, I want to move my character in the game, so that I can navigate the
 #### 🔗 Dependencies  
 - Enemy hitbox detection system
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *No mockup needed for basic movement.*  
 
 ---
@@ -221,7 +219,7 @@ As a player, I want a health system to manage damage taken, so that I can track 
 - Collision detection system  
 - Game over system  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *No mockup needed for this feature in MVP.*  
 
 ___
@@ -263,7 +261,7 @@ As a player, I want tiles of the map to fall randomly, so that I must stay aware
 - Player movement system  
 - Death handling system  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 ![flashing tiles](../pics/[FTL]Mockup_Tiles.jpg) 
 
 ___
@@ -301,7 +299,7 @@ As a player, I want to be able to use a flashlight, so that I can find my ennemi
 - Lighting system  
 - Game environment
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 ![Flashlights](../pics/[FTL]Mockup_flashlight.jpg)
 
 ___
@@ -347,7 +345,7 @@ As a player, I want to join a game session, so that I can play with other people
 - Synchronization system (for real-time gameplay)   
 - Session management (for joining, creating, and leaving sessions)  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *No mockup needed for basic multiplayer session functionality.*
 
 ___
@@ -387,7 +385,7 @@ As a player, I want the game to have a hitbox system, so that my character can i
 - Physics engine (for accurate collision detection and response)  
 - Character movement system (to update hitbox position based on player movement) 
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *No mockup needed for basic hitbox functionality, but hitboxes could be visualized as debug shapes during testing.*
 
 ____
@@ -436,7 +434,7 @@ As a player, I want to see a scoreboard, so that I can track my performance and 
 - Multiplayer session system (to synchronize scores across players)  
 - UI system (to display and update the scoreboard in real time)  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 ![Scoreboard in game](../pics/[FTL]Mockup_Scoreboard.jpg)
 
 ___
@@ -478,7 +476,7 @@ As a player, I want to prevent multiple instances of the game from running simul
 - Operating system APIs for process management  
 - UI system for displaying messages to the player  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *No mockup needed for this functionality*
 
 ___
@@ -516,7 +514,7 @@ As a new player, I want to create an account, so that I can save my progress.
 - [ ] Create a **registration form UI** (username, password, email).  
 - [ ] Implement **input validation** (username uniqueness, password strength, email format).  
 - [ ] Hash and store passwords **securely** in the database.  
-- [ ] Implement **email verification** system (if applicable).  
+- [ ] Implement **email verification** system .  
 - [ ] Display **user-friendly error messages** for registration failures.  
 - [ ] Save new accounts to the **database**.  
 
@@ -525,7 +523,7 @@ As a new player, I want to create an account, so that I can save my progress.
 - Authenti cation system (for login & security)  
 - Email service (if email verification is required)  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 ![index](../pics/[FTL]Mockup_Index.jpg)
 
 
@@ -575,5 +573,5 @@ As a player, I want to log in to my account, so that I can access my saved progr
 - Email service (for password reset)  
 - Security measures (hashing, rate-limiting, CAPTCHA)  
 
-#### 🎨 Mockup (If Applicable)  
+#### 🎨 Mockup   
 *Same design/example as the index*
