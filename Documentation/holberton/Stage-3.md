@@ -13,7 +13,12 @@
     - [Mockups (Main Screens \& UI Elements)](#mockups-main-screens--ui-elements)
   - [Task 1: System Architecture](#task-1-system-architecture)
     - [High-level Architecture Diagram](#high-level-architecture-diagram)
-    - [Technology Stack Justification](#technology-stack-justification)
+    - [Data Flow Between Components](#data-flow-between-components)
+    - [Technology Stack Overview:](#technology-stack-overview)
+      - [Frontend (Client-Side):](#frontend-client-side)
+      - [Backend (Server-Side):](#backend-server-side)
+      - [Deployment \& Infrastructure:](#deployment--infrastructure)
+      - [Scalability Considerations:](#scalability-considerations)
   - [Task 2: Components \& Database Design](#task-2-components--database-design)
     - [Core Components Overview](#core-components-overview)
     - [Database Schema (ER Diagram)](#database-schema-er-diagram)
@@ -68,7 +73,77 @@ To lighten this document, you can find all the [user stories in this link](./Use
 
 ### High-level Architecture Diagram
 
-### Technology Stack Justification
+The purpose of this architecture is to define the interaction between core components of the MVP and ensure scalability and efficiency. It provides a structured overview of how the front-end, back-end, databases, and external services interact to create a seamless multiplayer gaming experience.
+
+![High-Level Architecture Diagram](../pics/Diagrams/[FTL]High-level_architecture_diagram.jpg)
+
+### Data Flow Between Components
+
+**User Flow:**
+1. **User Authentication**  
+    - User interacts with the Svelte Frontend.  
+    - Request sent to the Express Backend.  
+    - Supabase handles authentication against its database.  
+    - Token/session is generated and sent back to the frontend.
+
+2. **Multiplayer Game Session**  
+    - Players join a game session.  
+    - Phaser.js handles real-time game logic on the frontend.  
+    - Game events (movement, attacks, destruction) are sent via Socket.IO.  
+    - The Express Backend processes events and updates the game state in Supabase.  
+    - Updates are pushed to all connected players in real-time.
+
+3. **Game State and Map Destruction**  
+    - The game map updates dynamically based on destruction events.  
+    - Backend updates game data in Supabase.  
+    - Frontend receives real-time updates via WebSockets.
+
+4. **Game End and Scoreboard**  
+    - The final game state is stored in Supabase.  
+    - Scoreboard is updated and displayed to all players.
+
+### Technology Stack Overview:
+
+#### Frontend (Client-Side):
+- **Svelte**:  
+  - **Why**: Svelte is a modern, lightweight, and highly efficient JavaScript framework that compiles to optimized vanilla JavaScript at build time. This leads to smaller bundle sizes and faster loading times, ensuring a smooth and responsive user experience—essential for a fast-paced game. It’s reactive nature makes it easy to build interactive UIs, which is perfect for handling real-time updates in a multiplayer environment.
+  
+- **Phaser.js**:  
+  - **Why**: Phaser.js is a powerful and flexible game development framework specifically designed for building 2D games. It supports real-time rendering, physics, and game state management—all of which are critical for creating interactive multiplayer experiences. It provides everything needed to manage game logic, assets, and interactions efficiently, which is essential for our game's fast-paced dynamics.
+
+- **WebSockets (Socket.IO Client)**:  
+  - **Why**: Socket.IO is a robust solution for real-time communication over WebSockets. It allows low-latency, bi-directional communication between the client and server, making it ideal for synchronizing multiplayer gameplay. With Phaser.js handling game state on the frontend and Socket.IO managing the communication, we ensure that player actions (e.g., movements, attacks) and game state updates happen in real-time without noticeable lag.
+
+#### Backend (Server-Side):
+- **Node.js & Express.js**:  
+  - **Why**: Node.js provides a non-blocking, event-driven environment perfect for handling multiple simultaneous connections—critical for a multiplayer game where many players interact with the server in real-time. Express.js is a lightweight and flexible framework that allows for easy routing and handling of API requests. Together, they provide the performance and scalability necessary to handle game logic, player interactions, and API requests in an efficient manner.
+
+- **Socket.IO**:  
+  - **Why**: Socket.IO is used for its ability to enable real-time, low-latency communication. For a multiplayer game, where constant synchronization of game events is needed, Socket.IO ensures that player movements, attacks, and game state updates are communicated instantly. This is vital to ensuring a smooth gameplay experience.
+
+- **Supabase**:  
+  - **Why**: Supabase provides a scalable backend solution with an easy-to-use PostgreSQL database and built-in user authentication. It offers real-time database synchronization, which is essential for maintaining game state consistency across multiple players. By leveraging Supabase's built-in authentication system, we streamline user sign-up and login processes without having to reinvent the wheel for secure user management. This lets us focus more on game logic and player interactions.
+
+#### Deployment & Infrastructure:
+- **Docker**:  
+  - **Why**: Docker allows us to containerize the application, ensuring that it can run consistently across different environments. This is especially important when deploying the game to various platforms or scaling across multiple servers. With Docker, we can guarantee that all dependencies are bundled together, simplifying deployment and ensuring reliability.
+
+- **Phaser Hosting**:  
+  - **Why**: As Phaser.js is responsible for the client-side game logic, it can also handle the hosting of static files (such as game assets and frontend code) directly. This reduces complexity by removing the need for an additional hosting service for frontend files and ensures better integration with the game engine.
+
+#### Scalability Considerations:
+- **Microservices Approach**:  
+  - **Why**: As the game expands, we may introduce additional services, such as matchmaking or player progression systems. A microservices architecture will allow us to scale specific components independently based on demand. For example, if the game logic requires more computational resources, we can scale that part of the system without affecting other components like authentication or matchmaking.
+
+- **Load Balancing**:  
+  - **Why**: Load balancing ensures that traffic is distributed evenly across multiple servers, preventing any one server from becoming overwhelmed. This is especially important for multiplayer games that require high availability and low latency. With solutions like Nginx or cloud-based load balancing, we can manage spikes in traffic while maintaining smooth gameplay.
+
+- **Database Optimization**:  
+  - **Why**: Supabase’s PostgreSQL database is optimized for scalability. Features like indexing and sharding will be used to handle large datasets efficiently, ensuring that we can manage player data, game states, and other dynamic information without degrading performance as the user base grows.
+
+- **Caching with Redis**:  
+  - **Why**: Redis is an in-memory data store that can be used for caching frequently accessed data, such as player stats or game states. Caching helps reduce database load and speeds up access to critical game data, providing a smoother user experience in high-demand moments.
+
 
 ## Task 2: Components & Database Design
 
@@ -115,6 +190,28 @@ To lighten this document, you can find all the [user stories in this link](./Use
     - game_update → Broadcasts state changes to all clients.
 
 ### Internal API Endpoints (Routes, Inputs/Outputs)
+
+- **User Authentication**
+  
+| Method | Endpoint           | Description                        | Input                                              | Output                                      |
+|--------|--------------------|------------------------------------|---------------------------------------------------|---------------------------------------------|
+| POST   | `auth/register` | Registers a new user              | `{ "email": "user@example.com", "password": "secure123" }` | `{ "user_id": "abc123", "message": "User created" }` |
+| POST   | `/auth/login`    | Authenticates user and returns a token | `{ "email": "user@example.com", "password": "secure123" }` | `{ "token": "jwt_token" }` |
+
+- **Game Management**
+
+| Method | Endpoint                   | Description                 | Input                                             | Output                                      |
+|--------|----------------------------|-----------------------------|--------------------------------------------------|---------------------------------------------|
+| GET    | `/`                   | Home page: launching a game, login, signup, leaderboard   | -                                                             | `{ "leaderboard": [{"user_id": "abc123", "score": 100}, ...] }` |
+| GET    | `/game/:session_id` | Fetches current game state  | URL param: `session_id`                          | `{ "players": [...], "map_state": {...} }`  |
+| POST   | `/game/:session_id/end`               | End the game: show results  | `{ "session_id": "game456", "winner_id": "user789" }` | `{ "message": "Game ended" }` |
+
+- **User**
+  
+| Method | Endpoint                  | Description           | Input               | Output                                          |
+|--------|---------------------------|-----------------------|----------------------|------------------------------------------------|
+| GET    | `/:user_id` | Fetches player stats and play button | URL param: `user_id` | `{ "games_played": 10, "wins": 3 }`            |
+
 
 ## Source Control & QA Strategy
 
