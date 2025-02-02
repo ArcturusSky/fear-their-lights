@@ -1,0 +1,103 @@
+API Documentation: External & Internal APIs
+External APIs Used
+1. Supabase (PostgreSQL & Authentication)
+    • Purpose:
+        ◦ Manages user authentication (sign-up, login, password reset).
+        ◦ Stores game-related data (players, game sessions, scores).
+    • Why?
+        ◦ Provides an easy-to-use PostgreSQL backend.
+        ◦ Built-in authentication system.
+        ◦ Real-time database capabilities.
+    • Relevant Endpoints:
+        ◦ POST /auth/v1/signup → Create a new user.
+        ◦ POST /auth/v1/token?grant_type=password → Log in a user.
+        ◦ POST /auth/v1/reset → Send password reset email.
+2. Socket.IO (Real-Time Communication)
+    • Purpose:
+        ◦ Enables real-time multiplayer interactions (movement, attacks, game state).
+    • Why?
+        ◦ Efficient WebSocket-based messaging.
+        ◦ Low latency, crucial for fast-paced games.
+    • Relevant Events:
+        ◦ player_movement → Syncs movement across players.
+        ◦ attack_action → Sends attack actions in real time.
+        ◦ game_update → Broadcasts state changes to all clients.
+
+Internal API Endpoints
+User Authentication
+Method
+Endpoint
+Description
+Input
+Output
+POST
+/api/auth/register
+Registers a new user
+{ "email": "user@example.com", "password": "secure123" }
+{ "user_id": "abc123", "message": "User created" }
+POST
+/api/auth/login
+Authenticates user and returns a token
+{ "email": "user@example.com", "password": "secure123" }
+{ "token": "jwt_token" }
+POST
+/api/auth/logout
+Logs out user
+{ "user_id": "abc123" }
+{ "message": "Logged out" }
+
+Game Management
+Method
+Endpoint
+Description
+Input
+Output
+POST
+/api/game/start
+Starts a new game session
+{ "user_id": "abc123" }
+{ "session_id": "game456", "status": "started" }
+GET
+/api/game/state/:session_id
+Fetches current game state
+URL param: session_id
+{ "players": [...], "map_state": {...} }
+POST
+/api/game/end
+Ends a game session
+{ "session_id": "game456", "winner_id": "user789" }
+{ "message": "Game ended" }
+
+Player Actions
+Method
+Endpoint
+Description
+Input
+Output
+POST
+/api/player/move
+Moves a player on the map
+{ "user_id": "abc123", "x": 10, "y": 15 }
+{ "status": "moved" }
+POST
+/api/player/attack
+Executes an attack
+{ "user_id": "abc123", "target_id": "user789" }
+{ "status": "attack success", "damage": 20 }
+
+Scoreboard & Stats
+Method
+Endpoint
+Description
+Input
+Output
+GET
+/api/leaderboard
+Retrieves top players
+None
+[ { "username": "Player1", "score": 500 }, ...]
+GET
+/api/player/stats/:user_id
+Fetches player stats
+URL param: user_id
+{ "games_played": 10, "wins": 3 }
