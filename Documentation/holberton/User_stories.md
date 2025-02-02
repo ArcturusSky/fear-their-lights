@@ -1,110 +1,20 @@
 # Stage 3: Technical Documentation & System Design - User stories
 
-## Sommaire
-
-- [Stage 3: Technical Documentation \& System Design - User stories](#stage-3-technical-documentation--system-design---user-stories)
+  [Stage 3: Technical Documentation \& System Design - User stories](#stage-3-technical-documentation--system-design---user-stories)
   - [Sommaire](#sommaire)
   - [🎮 Core Gameplay](#-core-gameplay)
     - [User Story: Player Movement](#user-story-player-movement)
-      - [📌 Description](#-description)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done-)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow)
-      - [📝 Scenario](#-scenario)
-      - [🏗️ Technical Notes](#️-technical-notes)
-      - [🛠️ Tasks](#️-tasks)
-      - [🔗 Dependencies](#-dependencies)
-      - [🎨 Mockup](#-mockup)
     - [User Story: Melee Combat](#user-story-melee-combat)
-      - [📌 Description](#-description-1)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--1)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-1)
-      - [📝 Scenario](#-scenario-1)
-      - [🏗️ Technical Notes](#️-technical-notes-1)
-      - [🛠️ Tasks](#️-tasks-1)
-      - [🔗 Dependencies](#-dependencies-1)
-      - [🎨 Mockup](#-mockup-1)
     - [User Story: Health System](#user-story-health-system)
-      - [📌 Description](#-description-2)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--2)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-2)
-      - [📝 Scenario](#-scenario-2)
-      - [🏗️ Technical Notes](#️-technical-notes-2)
-      - [🛠️ Tasks](#️-tasks-2)
-      - [🔗 Dependencies](#-dependencies-2)
-      - [🎨 Mockup](#-mockup-2)
     - [User Story: Map Destruction (Falling Tiles)](#user-story-map-destruction-falling-tiles)
-      - [📌 Description](#-description-3)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--3)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-3)
-      - [📝 Scenario](#-scenario-3)
-      - [🏗️ Technical Notes](#️-technical-notes-3)
-      - [🛠️ Tasks](#️-tasks-3)
-      - [🔗 Dependencies](#-dependencies-3)
-      - [🎨 Mockup](#-mockup-3)
     - [User Story: Flashlight System](#user-story-flashlight-system)
-      - [📌 Description](#-description-4)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--4)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-4)
-      - [📝 Scenario](#-scenario-4)
-      - [🏗️ Technical Notes](#️-technical-notes-4)
-      - [🛠️ Tasks](#️-tasks-4)
-      - [🔗 Dependencies](#-dependencies-4)
-      - [🎨 Mockup](#-mockup-4)
-  - [🛠️ Game Management](#️-game-management)
+  - [🛠️ Management](#️-game-management)
     - [User Story: Multiplayer Session](#user-story-multiplayer-session)
-      - [📌 Description](#-description-5)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--5)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-5)
-      - [📝 Scenario](#-scenario-5)
-      - [🏗️ Technical Notes](#️-technical-notes-5)
-      - [🛠️ Tasks](#️-tasks-5)
-      - [🔗 Dependencies](#-dependencies-5)
-      - [🎨 Mockup](#-mockup-5)
     - [User Story: Hitbox System](#user-story-hitbox-system)
-      - [📌 Description](#-description-6)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--6)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-6)
-      - [📝 Scenario](#-scenario-6)
-      - [🏗️ Technical Notes](#️-technical-notes-6)
-      - [🛠️ Tasks](#️-tasks-6)
-      - [🔗 Dependencies](#-dependencies-6)
-      - [🎨 Mockup](#-mockup-6)
     - [User Story: Scoreboard System](#user-story-scoreboard-system)
-      - [📌 Description](#-description-7)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--7)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-7)
-      - [📝 Scenario](#-scenario-7)
-      - [🏗️ Technical Notes](#️-technical-notes-7)
-      - [🛠️ Tasks](#️-tasks-7)
-      - [🔗 Dependencies](#-dependencies-7)
-      - [🎨 Mockup](#-mockup-7)
     - [User Story: Prevent Multi-Instances](#user-story-prevent-multi-instances)
-      - [📌 Description](#-description-8)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--8)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-8)
-      - [📝 Scenario](#-scenario-8)
-      - [🏗️ Technical Notes](#️-technical-notes-8)
-      - [🛠️ Tasks](#️-tasks-8)
-      - [🔗 Dependencies](#-dependencies-8)
-      - [🎨 Mockup](#-mockup-8)
     - [User Story: Account Creation](#user-story-account-creation)
-      - [📌 Description](#-description-9)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--9)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-9)
-      - [📝 Scenario](#-scenario-9)
-      - [🏗️ Technical Notes](#️-technical-notes-9)
-      - [🛠️ Tasks](#️-tasks-9)
-      - [🔗 Dependencies](#-dependencies-9)
-      - [🎨 Mockup](#-mockup-9)
     - [User Story: User Authentication](#user-story-user-authentication)
-      - [📌 Description](#-description-10)
-      - [🎯 Acceptance Criteria (Definition of Done ✅)](#-acceptance-criteria-definition-of-done--10)
-      - [🔄 Priority (MoSCoW)](#-priority-moscow-10)
-      - [📝 Scenario](#-scenario-10)
-      - [🏗️ Technical Notes](#️-technical-notes-10)
-      - [🛠️ Tasks](#️-tasks-10)
-      - [🔗 Dependencies](#-dependencies-10)
-      - [🎨 Mockup](#-mockup-10)
 
 ## 🎮 Core Gameplay
 
@@ -304,52 +214,6 @@ As a player, I want to be able to use a flashlight, so that I can find my ennemi
 
 ___
 
-## 🛠️ Game Management
-
-### User Story: Multiplayer Session  
-
-#### 📌 Description  
-As a player, I want to join a game session, so that I can play with other people.
-
-#### 🎯 Acceptance Criteria (Definition of Done ✅)   
-- ✅ The player can join a wait room to join a session.
-- ✅ The player can view other players in the session, with their actions synchronized in real time.  
-- ✅ The player can leave the session at any time, and their exit does not disrupt the other players.  
-- ✅ The session should handle player disconnections gracefully, allowing players to reconnect if they disconnect unexpectedly.  
-
-
-#### 🔄 Priority (MoSCoW)  
-🟥 Must Have  
-
-#### 📝 Scenario  
-**Given** the player on the welcome screen,  
-**When** they select to play a game, 
-**Then** they are successfully connected to the session with other players.  
-**And** they can see and interact with other players in the game world.  
-**And** they can leave or disconnect from the session without negatively affecting the other players.  
-
-#### 🏗️ Technical Notes  
-- **Session management:** Implement a system that allows players to either join existing sessions or create new ones.  
-- **Real-time synchronization:** Ensure player actions, movements, and interactions are synchronized across all players in the session.  
-- **Networking:** The session should handle network latency, ensuring smooth gameplay even with multiple players.  
-- **Player disconnection:** Players should be able to disconnect without affecting the gameplay for others.  
-
-#### 🛠️ Tasks  
-- [ ] Create a **wait room**  
-- [ ] Develop real-time **player synchronization** (position, actions, interactions).  
-- [ ] Handle **disconnection** events to maintain session stability.  
-- [ ] Ensure players can **leave** the session without causing disruption.  
-
-#### 🔗 Dependencies  
-- Network system (to handle multiplayer connections)  
-- Synchronization system (for real-time gameplay)   
-- Session management (for joining, creating, and leaving sessions)  
-
-#### 🎨 Mockup   
-*No mockup needed for basic multiplayer session functionality.*
-
-___
-
 ### User Story: Hitbox System  
 
 #### 📌 Description  
@@ -436,6 +300,51 @@ As a player, I want to see a scoreboard, so that I can track my performance and 
 
 #### 🎨 Mockup   
 ![Scoreboard in game](../pics/[FTL]Mockup_Scoreboard.jpg)
+___
+
+## 🛠️ Management
+
+### User Story: Multiplayer Session  
+
+#### 📌 Description  
+As a player, I want to join a game session, so that I can play with other people.
+
+#### 🎯 Acceptance Criteria (Definition of Done ✅)   
+- ✅ The player can join a wait room to join a session.
+- ✅ The player can view other players in the session, with their actions synchronized in real time.  
+- ✅ The player can leave the session at any time, and their exit does not disrupt the other players.  
+- ✅ The session should handle player disconnections gracefully, allowing players to reconnect if they disconnect unexpectedly.  
+
+
+#### 🔄 Priority (MoSCoW)  
+🟥 Must Have  
+
+#### 📝 Scenario  
+**Given** the player on the welcome screen,  
+**When** they select to play a game, 
+**Then** they are successfully connected to the session with other players.  
+**And** they can see and interact with other players in the game world.  
+**And** they can leave or disconnect from the session without negatively affecting the other players.  
+
+#### 🏗️ Technical Notes  
+- **Session management:** Implement a system that allows players to either join existing sessions or create new ones.  
+- **Real-time synchronization:** Ensure player actions, movements, and interactions are synchronized across all players in the session.  
+- **Networking:** The session should handle network latency, ensuring smooth gameplay even with multiple players.  
+- **Player disconnection:** Players should be able to disconnect without affecting the gameplay for others.  
+
+#### 🛠️ Tasks  
+- [ ] Create a **wait room**  
+- [ ] Develop real-time **player synchronization** (position, actions, interactions).  
+- [ ] Handle **disconnection** events to maintain session stability.  
+- [ ] Ensure players can **leave** the session without causing disruption.  
+
+#### 🔗 Dependencies  
+- Network system (to handle multiplayer connections)  
+- Synchronization system (for real-time gameplay)   
+- Session management (for joining, creating, and leaving sessions)  
+
+#### 🎨 Mockup   
+*No mockup needed for basic multiplayer session functionality.*
 
 ___
 
