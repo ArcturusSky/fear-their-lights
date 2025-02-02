@@ -21,12 +21,26 @@
       - [Scalability Considerations:](#scalability-considerations)
   - [Task 2: Components \& Database Design](#task-2-components--database-design)
     - [Core Components Overview](#core-components-overview)
+      - [Backend Structure](#backend-structure)
+        - [Key Classes](#key-classes)
+          - [**User**](#user)
+          - [**GameSession**](#gamesession)
+          - [**PlayerCharacter**](#playercharacter)
+          - [**GameMap**](#gamemap)
     - [Database Schema (ER Diagram)](#database-schema-er-diagram)
+      - [Supabase Schema (PostgreSQL-based)](#supabase-schema-postgresql-based)
+        - [**Users (User Accounts)**](#users-user-accounts)
+        - [**Game Sessions (Active/Completed Matches)**](#game-sessions-activecompleted-matches)
+        - [**Player Characters (Player Stats and Attributes)**](#player-characters-player-stats-and-attributes)
+        - [**Game Map (Game World Data)**](#game-map-game-world-data)
     - [Data Flow \& Interactions](#data-flow--interactions)
+      - [**Frontend UI Components**](#frontend-ui-components)
+        - [**Main Components**](#main-components)
+      - [**Component Interaction Flow**](#component-interaction-flow)
   - [Task 3: Sequence Diagrams](#task-3-sequence-diagrams)
     - [Gameplay Flow](#gameplay-flow)
     - [User Authentication Process](#user-authentication-process)
-    - [MatchMaking \& Game Sessions](#matchmaking--game-sessions)
+    - [Game Session](#game-session)
   - [Task 4: API Documentation](#task-4-api-documentation)
     - [External APIs](#external-apis)
     - [Internal API Endpoints (Routes, Inputs/Outputs)](#internal-api-endpoints-routes-inputsoutputs)
@@ -149,17 +163,154 @@ The purpose of this architecture is to define the interaction between core compo
 
 ### Core Components Overview
 
+#### Backend Structure
+
+##### Key Classes
+
+###### **User**
+- **Attributes**:
+  - `id`: Unique identifier
+  - `username`: String (unique, required)
+  - `email`: String (unique, required)
+  - `password_hash`: String (hashed password, required)
+  - `created_at`: Timestamp
+  - `last_login`: Timestamp (optional)
+- **Methods**:
+  - `register()`: Creates a new user
+  - `authenticate()`: Verifies user credentials
+  - `update_password()`: Modifies the password
+  - `delete_account()`: Deletes the user
+
+###### **GameSession**
+- **Attributes**:
+  - `id`: Unique identifier
+  - `players`: List of User IDs
+  - `start_time`: Timestamp
+  - `end_time`: Timestamp (nullable, for ongoing sessions)
+  - `winner`: User ID (nullable until the game ends)
+  - `sorted_scores`: Sorts the score of all the players
+- **Methods**:
+  - `start_session()`: Initializes a game session
+  - `add_player(user_id)`: Adds a player to the session
+  - `remove_player(user_id)`: Removes a player from the session
+  - `end_session(winner_id)`: Ends the session and declares a winner
+
+###### **PlayerCharacter**
+- **Attributes**:
+  - `id`: Unique identifier
+  - `user_id`: User ID reference
+  - `position_x`: Float (current X coordinate)
+  - `position_y`: Float (current Y coordinate)
+  - `alive`: true
+  - `weapon`: String (default: melee weapon) (specified for potential firearms later)
+  - `killScore`: Number of kills done in the session. Usefull for the scores.
+- **Methods**:
+  - `move(direction)`: Updates position
+  - `attack(target_id)`: Executes an attack
+  - `take_damage(amount)`: Reduces health
+
+###### **GameMap**
+- **Attributes**:
+  - `id`: Unique identifier
+  - `grid`: 2D array defining the terrain
+  - `darkness_level`: Integer (for light visibility calculations)
+  - `destruction_timer`: Timer for progressive map destruction
+- **Methods**:
+  - `update_darkness()`: Modifies darkness level dynamically
+  - `destroy_area(region_id)`: Removes an area from the map
+
+---
+
 ### Database Schema (ER Diagram)
 
+#### Supabase Schema (PostgreSQL-based)
+
+##### **Users (User Accounts)**
+```sql
+CREATE TABLE users (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  username TEXT UNIQUE NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW(),
+  last_login TIMESTAMP
+);
+```
+
+##### **Game Sessions (Active/Completed Matches)**
+```sql
+CREATE TABLE game_sessions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  players UUID[] NOT NULL,
+  start_time TIMESTAMP DEFAULT NOW(),
+  end_time TIMESTAMP,
+  winner UUID REFERENCES users(id)
+);
+```
+
+##### **Player Characters (Player Stats and Attributes)**
+```sql
+CREATE TABLE player_characters (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id),
+  position_x FLOAT NOT NULL,
+  position_y FLOAT NOT NULL,
+  health INT DEFAULT 100,
+  weapon TEXT DEFAULT 'Melee'
+);
+```
+
+##### **Game Map (Game World Data)**
+```sql
+CREATE TABLE game_map (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  grid JSONB NOT NULL,
+  darkness_level INT DEFAULT 5,
+  destruction_timer INT DEFAULT 30
+);
+```
+
+---
+
 ### Data Flow & Interactions
+
+#### **Frontend UI Components**
+
+##### **Main Components**
+- **MainMenu/Index**
+  - Displays the play button, login, register
+  - Button to play
+  - Displays real-time player rankings
+- **GameCanvas**
+  - HTML5 Canvas component rendering the game map and player positions
+  - Manages dynamic updates via WebSockets
+  - Phaser managing players actions
+- **AuthenticationForm**
+  - Handles user login and registration
+- **Profile**
+  - Displays user profile and score if registered 
+
+#### **Component Interaction Flow**
+1. **MainMenu** → Player choose to play anonymously or login/register
+2. (Optional)**User Login** → Auth API verifies credentials and retrieves user data.
+3. **Gameplay (GameCanvas)** → Renders map, synchronizes player movements via WebSockets and players movements/actions through Phaser.
+4. **Combat System** → Player actions (attacks, movements) are processed in real-time.
+5. **Game End** → The server updates `game_sessions` with the winner.
+
 
 ## Task 3: Sequence Diagrams
 
 ### Gameplay Flow
 
+![Real-time gameplay](../pics/Diagrams/[FTL]Sequence_Diagram_Real-time_Gameplay-2025-02-02-213650.png)
+
 ### User Authentication Process
 
-### MatchMaking & Game Sessions
+![User-Authentication](../pics/Diagrams/[FTL]Sequence_Diagram_User-Auth.png)
+
+### Game Session
+
+![Starting a game](../pics/Diagrams/[FTL]Sequence_Diagram_User-Auth.png)
 
 ## Task 4: API Documentation
 
