@@ -44,12 +44,14 @@
   - [Task 4: API Documentation](#task-4-api-documentation)
     - [External APIs](#external-apis)
     - [Internal API Endpoints (Routes, Inputs/Outputs)](#internal-api-endpoints-routes-inputsoutputs)
-  - [Source Control \& QA Strategy](#source-control--qa-strategy)
-    - [Version Control Strategy (Git Workflow)](#version-control-strategy-git-workflow)
-    - [Testing Plan (Unit, Integration, End-to-end)](#testing-plan-unit-integration-end-to-end)
-  - [Technical Justifications \& Constraints](#technical-justifications--constraints)
-    - [Why this architecture ?](#why-this-architecture-)
-    - [Scalability \& Performance Considerations](#scalability--performance-considerations)
+  - [Task 5: Source Control \& QA Strategy](#task-5-source-control--qa-strategy)
+    - [Source Control \& QA Strategy](#source-control--qa-strategy)
+      - [Version Control Strategy (Git Workflow)](#version-control-strategy-git-workflow)
+      - [Testing Plan (Unit, Integration, End-to-End)](#testing-plan-unit-integration-end-to-end)
+  - [Quality Assurance (QA) Strategy](#quality-assurance-qa-strategy)
+  - [CI/CD \& Deployment Pipeline](#cicd--deployment-pipeline)
+  - [Summary](#summary)
+  - [Notes on Specific Tools:](#notes-on-specific-tools)
 
 
 ## Introduction
@@ -364,14 +366,90 @@ CREATE TABLE game_map (
 | GET    | `/:user_id` | Fetches player stats and play button | URL param: `user_id` | `{ "games_played": 10, "wins": 3 }`            |
 
 
-## Source Control & QA Strategy
+## Task 5: Source Control & QA Strategy
 
-### Version Control Strategy (Git Workflow)
+### Source Control & QA Strategy
 
-### Testing Plan (Unit, Integration, End-to-end)
+#### Version Control Strategy (Git Workflow)
+We will use **Git** with a **GitHub** repository to track changes, collaborate, and maintain code integrity.
 
-## Technical Justifications & Constraints
+**Proposed workflow:**  
+1. **Main Branch (`main`)**: Contains only stable, production-ready code.  
+2. **Develop Branch (`develop`)**: Integrates new features merged before merging into `main`. kinda a "save" of everything merged to see if it works before sending to the `main`.
+3. **Feature Branches (`feature/feature-name`)**: Each new feature is developed on a separate branch before merging into `develop`. Example: feature.user-authentication.  
+4. **Bugfix Branches (`bugfix/bug-name`)**: Quick fixes for issues found in staging or production. Example: bugfix/login-error.
+5. **Hotfix Branches (`hotfix/hotfix-name`)**: For urgent fixes applied QUICKLY directly to `main`. Example: hotfix/server-crash.
 
-### Why this architecture ?
+**Best practices:**  
+✅ All branches are updated through **pull requests (PRs)** and must be reviewed before merging.
+✅ Frequent commits (small, atomic changes).
+✅ Commits follow a **clear convention** (`feat:`, `fix:`, `refactor:`, etc.).  
+✅ PRs must **pass automated tests** before merging.  
 
-### Scalability & Performance Considerations
+---
+
+#### Testing Plan (Unit, Integration, End-to-End)
+To ensure code quality, we implement multiple levels of testing:  
+
+1. **Unit Tests**  
+   - Validate the correct behavior of **individual functions and components**.  
+   - Executed using **Vitest** (for JavaScript logic) and **Svelte Testing Library** (for UI components).  
+
+2. **Integration Tests**  
+   - Ensure that different components work correctly together (API + database).  
+   - Performed using **Postman** [Note: Postman or else, I'm still looking through all the possible extension and test application such as Keploy, thunderClient or rest client.], Vitest (backend & frontend), and Playwright (UI interactions)**.  
+
+3. **End-to-End (E2E) Tests**  
+   - Simulate real user scenarios to test the entire application.  
+   - Automated using **Playwright** for UI interactions.  
+
+
+💡 **Strategy**: Tests are automated with **GitHub Actions** and must pass before deployment.  
+
+---
+
+## Quality Assurance (QA) Strategy
+
+| **Test Type**             | **Purpose**                              | **Tools Used**                             | **Scope**                                    |
+|---------------------------|------------------------------------------|--------------------------------------------|----------------------------------------------|
+| **Unit Tests**             | Verify individual components/functions   | Jest, Mocha (for Node.js)                  | API endpoints, utility functions, Svelte components |
+| **Integration Tests**      | Ensure APIs work together correctly      | Supertest, Postman (optional for manual API testing) | Backend services interacting with Express & Supabase  |
+| **End-to-End (E2E) Tests** | Validate user workflows                  | Cypress, Playwright (for Svelte apps)      | User authentication, gameplay interactions   |
+| **Performance Testing**    | Test system under load                   | k6, Artillery                              | API response times, WebSocket efficiency     |
+| **Manual Testing**         | Exploratory testing for edge cases       | QA testers                                 | UI, UX, and gameplay mechanics in Phaser and Svelte |
+
+---
+
+## CI/CD & Deployment Pipeline
+
+1. **GitHub Actions for CI/CD**
+   - Runs unit & integration tests automatically on push.
+   - Deploys to staging on merging to `develop`.
+   - Deploys to production on merging to `main`.
+
+2. **Environments**
+   - **Local Development** → Developers test on local machines using `.env.local`.
+   - **Staging (Test Server)** → Pre-production environment for QA testing.
+   - **Production** → Live environment used by players.
+
+---
+
+## Summary
+
+- **SCM Strategy:**
+  - Git + GitHub
+  - Feature-based branching
+  - Pull requests with code reviews
+
+- **QA Strategy:**
+  - Automated tests: Jest, Mocha, Cypress, Playwright, Supertest
+  - Manual testing for UX & gameplay
+  - Continuous Integration with GitHub Actions
+
+---
+
+## Notes on Specific Tools:
+- **Jest/Mocha** : These tools are great for testing specific functions (like APIs or utilities). Mocha can also be used with **Chai** for assertions, which is common for tests in Node.js.
+- **Supertest** : Perfect for testing APIs with Express.
+- **Cypress / Playwright** : These tools are better suited for frontend applications like those built with **Svelte** and **Phaser**. They allow simulating real users to test UI interactions.
+- **k6 / Artillery** : These tools allow performance testing by simulating real users and measuring response times of APIs and systems.
