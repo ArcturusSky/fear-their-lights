@@ -23,13 +23,13 @@
     - [Core Components Overview](#core-components-overview)
       - [Backend Structure](#backend-structure)
         - [Key Classes](#key-classes)
-          - [**User**](#user)
-          - [**GameSession**](#gamesession)
-          - [**PlayerCharacter**](#playercharacter)
-          - [**GameMap**](#gamemap)
+          - [User](#user)
+          - [GameSession](#gamesession)
+          - [PlayerCharacter](#playercharacter)
+          - [GameMap](#gamemap)
     - [Database Schema (ER Diagram)](#database-schema-er-diagram)
       - [Supabase Schema (PostgreSQL-based)](#supabase-schema-postgresql-based)
-        - [**Users (User Accounts)**](#users-user-accounts)
+        - [Users (User Accounts)](#users-user-accounts)
         - [**Game Sessions (Active/Completed Matches)**](#game-sessions-activecompleted-matches)
         - [**Player Characters (Player Stats and Attributes)**](#player-characters-player-stats-and-attributes)
         - [**Game Map (Game World Data)**](#game-map-game-world-data)
@@ -169,7 +169,7 @@ The purpose of this architecture is to define the interaction between core compo
 
 ##### Key Classes
 
-###### **User**
+###### User
 - **Attributes**:
   - `id`: Unique identifier
   - `username`: String (unique, required)
@@ -183,7 +183,7 @@ The purpose of this architecture is to define the interaction between core compo
   - `update_password()`: Modifies the password
   - `delete_account()`: Deletes the user
 
-###### **GameSession**
+###### GameSession
 - **Attributes**:
   - `id`: Unique identifier
   - `players`: List of User IDs
@@ -197,7 +197,7 @@ The purpose of this architecture is to define the interaction between core compo
   - `remove_player(user_id)`: Removes a player from the session
   - `end_session(winner_id)`: Ends the session and declares a winner
 
-###### **PlayerCharacter**
+###### PlayerCharacter
 - **Attributes**:
   - `id`: Unique identifier
   - `user_id`: User ID reference
@@ -211,7 +211,7 @@ The purpose of this architecture is to define the interaction between core compo
   - `attack(target_id)`: Executes an attack
   - `take_damage(amount)`: Reduces health
 
-###### **GameMap**
+###### GameMap
 - **Attributes**:
   - `id`: Unique identifier
   - `grid`: 2D array defining the terrain
@@ -227,7 +227,7 @@ The purpose of this architecture is to define the interaction between core compo
 
 #### Supabase Schema (PostgreSQL-based)
 
-##### **Users (User Accounts)**
+##### Users (User Accounts)
 ```sql
 CREATE TABLE users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -257,7 +257,7 @@ CREATE TABLE player_characters (
   user_id UUID REFERENCES users(id),
   position_x FLOAT NOT NULL,
   position_y FLOAT NOT NULL,
-  health INT DEFAULT 100,
+  alive BOOL DEFAULT true,
   weapon TEXT DEFAULT 'Melee'
 );
 ```
@@ -268,7 +268,7 @@ CREATE TABLE game_map (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   grid JSONB NOT NULL,
   darkness_level INT DEFAULT 5,
-  destruction_timer INT DEFAULT 30
+  destruction_timer INT DEFAULT 120
 );
 ```
 
