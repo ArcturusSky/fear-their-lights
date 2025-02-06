@@ -192,7 +192,7 @@ Additional features could include:
 
 **Week 3-4: Initial Backend and Authentication**
 - [ ] Configure Node.js server with Express
-- [ ] Set up user authentication with MongoDB
+- [ ] Set up user authentication with Supabase
 - [ ] Implement WebSockets for real-time communication
 
 **Week 5-6: Basic Gameplay**
