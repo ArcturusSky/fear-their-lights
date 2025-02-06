@@ -92,11 +92,16 @@ The originality of this game lies in the addition of a survival horror touch. Un
   - Real-time bidirectional communication between clients and server.
   - Automatic management of user connections and disconnections.
   - Customizable events allowing flexibility in gameplay development.
+  - 
+**Supabase**  
+- 🗄️ **Why Supabase?**  
+  - **PostgreSQL-based** database with strong relational capabilities.  
+  - **Flexible schema** allowing easy adaptation to evolving game requirements.  
+  - **Built-in authentication** for secure and seamless user management.  
+  - **Real-time database updates**, ideal for multiplayer synchronization.  
+  - **Edge functions** to run server-side logic closer to users.  
+  - **Scalability & hosting** without complex infrastructure management.  
 
-**MongoDB**
-- 📈 Project Advantages
-  - Flexible schema allowing easy adaptation of the database to changing game needs.
-  - Native JSON data storage facilitating interaction with game data.
 
 **Docker**
 - 🌐 Benefits
