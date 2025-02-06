@@ -91,7 +91,7 @@ To lighten this document, you can find all the [user stories in this link](./Use
 
 The purpose of this architecture is to define the interaction between core components of the MVP and ensure scalability and efficiency. It provides a structured overview of how the front-end, back-end, databases, and external services interact to create a seamless multiplayer gaming experience.
 
-![High-Level Architecture Diagram](../pics/Diagrams/[FTL]High-level_architecture_diagram.jpg)
+![High-Level Architecture Diagram](../images/Diagrams/[FTL]High-level_architecture_diagram.jpg)
 
 ### Data Flow Between Components
 
@@ -304,15 +304,15 @@ CREATE TABLE game_map (
 
 ### Gameplay Flow
 
-![Real-time gameplay](../pics/Diagrams/[FTL]Sequence_Diagram_Real-time_Gameplay-2025-02-02-213650.png)
+![Real-time gameplay](../images/Diagrams/[FTL]Sequence_Diagram_Real-time_Gameplay-2025-02-02-213650.png)
 
 ### User Authentication Process
 
-![User-Authentication](../pics/Diagrams/[FTL]Sequence_Diagram_User-Auth.png)
+![User-Authentication](../images/Diagrams/[FTL]Sequence_Diagram_User-Auth.png)
 
 ### Game Session
 
-![Starting a game](../pics/Diagrams/[FTL]Sequence_Diagram_User-Auth.png)
+![Starting a game](../images/Diagrams/[FTL]Sequence_Diagram_User-Auth.png)
 
 ## Task 4: API Documentation
 

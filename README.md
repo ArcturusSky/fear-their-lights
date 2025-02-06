@@ -61,10 +61,10 @@ The originality of this game lies in the addition of a survival horror touch. Un
 - 🛠️ **ORM (Object Relational Mapper)**: [SQLAlchemy](https://www.sqlalchemy.org/) - To interact with the PostgreSQL database efficiently.
 - 🔐 **Authentication**: Supabase built-in auth system to handle user registration and login.
 
-### Deployment & Infrastructure
-- 🐳 **Containerization**: [Docker](https://www.docker.com/) - To isolate services and facilitate deployment.
-- ⚙️ **Orchestration**: Docker Compose - To easily manage multiple containers.
-- ☁️ **Hosting**: [Heroku](https://www.heroku.com/) or [DigitalOcean](https://www.digitalocean.com/) - To deploy the application to the cloud.
+### **Deployment & Infrastructure**
+- 🐳 **Containerization**: [Docker](https://www.docker.com/) - To isolate services and facilitate development.
+- ⚙️ **Orchestration**: Docker Compose - To manage multiple services easily.
+- ☁️ **Hosting**: **Phaser Cloud** - To deploy and serve the game seamlessly.
 
 ## 🚀 Detailed Technical Justification
 
@@ -111,27 +111,77 @@ The originality of this game lies in the addition of a survival horror touch. Un
 
 ## 🛠 Architecture Technique
 
-```text
 project-root/
 │
-├── client/ # Frontend Svelte
-│ └── src/
-│ ├── components/
-│ ├── stores/
-│ └── game/
+├── client/  # Frontend (Svelte + Phaser + HTML5 Canvas 2D)
+│   ├── src/
+│   │   ├── components/   # Reusable Svelte components (UI, menus, HUD)
+│   │   ├── stores/       # State management using Svelte stores
+│   │   ├── game/         # Phaser logic (scenes, sprites, physics, user inputs)
+│   │   ├── assets/       # Images, sounds, animations
+│   │   ├── styles/       # CSS/SCSS files
+│   │   ├── utils/        # Utility functions for the frontend
+│   │   ├── main.js       # Main entry point for Svelte
+│   ├── public/           # Static files (favicon, images, etc.)
+│   ├── index.html        # Main HTML file
+│   ├── vite.config.js    # Vite bundler configuration
+│   └── package.json      # Frontend dependencies & scripts
 │
-├── server/ # Backend Node.js
-│ ├── models/
-│ ├── controllers/
-│ ├── routes/
-│ └── sockets/
+├── server/  # Backend (Node.js + Express + Supabase)
+│   ├── models/         # Database models (if using an ORM like Prisma)
+│   ├── controllers/    # Business logic for handling API requests
+│   ├── routes/         # Express API routes
+│   ├── middleware/     # Authentication, validation, error handling
+│   ├── sockets/        # Real-time communication (Socket.IO)
+│   ├── services/       # Core logic (matchmaking, session management)
+│   ├── logs/           # Server logs (if implemented)
+│   ├── index.js        # Backend main entry point
+│   ├── config.js       # Server configuration
+│   ├── supabaseClient.js # Supabase database connection
+│   └── package.json    # Backend dependencies & scripts
 │
-├── database/ # Configuration MongoDB
+├── database/  # Supabase (PostgreSQL) configuration
+│   ├── schema.sql      # Database schema definition
+│   ├── seed.sql        # Initial test data
+│   ├── migrations/     # Database migration scripts
+│   ├── queries.sql     # Reusable SQL queries for debugging
+│   ├── supabaseConfig/ # Supabase authentication & role management
+│   └── backup/         # Database backup scripts
 │
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
-```
+├── tests/  # Automated Testing (Unit, Integration, E2E, Performance)
+│   ├── unit/           # Unit tests (Jest / Mocha)
+│   ├── integration/    # API tests (Supertest)
+│   ├── e2e/            # End-to-End tests (Cypress / Playwright)
+│   ├── performance/    # Load testing (k6 / Artillery)
+│   ├── api/            # API endpoint testing (Thunder Client / Keploy)
+│   ├── game/           # Game logic tests (if applicable)
+│   ├── setupTests.js   # Test setup configuration
+│   ├── mocks/          # Mock files for testing without external dependencies
+│   └── coverage/       # Test coverage reports
+│
+├── deployment/  # Infrastructure & Deployment
+│   ├── docker-compose.yml  # Multi-container deployment (DB + backend)
+│   ├── Dockerfile          # Backend Docker configuration
+│   ├── nginx.conf          # Reverse proxy configuration
+│   ├── ci-cd/              # CI/CD pipelines (GitHub Actions / GitLab CI)
+│   ├── server-config/      # Server configuration (e.g., PM2)
+│   └── env/                # Environment variables (dev, prod)
+│
+├── docs/  # Documentation
+│   ├── README.md           # Project overview & installation guide
+│   ├── API.md              # API endpoints documentation
+│   ├── GAMEPLAY.md         # Game mechanics explanation
+│   ├── ARCHITECTURE.md     # Project architecture details
+│   ├── DEPLOYMENT.md       # Deployment guide
+│   ├── CONTRIBUTING.md     # Contribution guidelines
+│   ├── stage_phase/        # Holberton internship documentation
+│   ├── images/             # Diagrams, architecture drawings, UI mockups
+│   └── TECH_STACK.md       # Overview of technologies used
+│
+├── .gitignore          # Files ignored by Git
+├── .env                # Environment variables (Supabase keys, secrets)
+└── LICENSE             # Project license
+
 
 ## 🎯 Technical Objectives
 

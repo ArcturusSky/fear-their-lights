@@ -172,7 +172,7 @@ As a player, I want tiles of the map to fall randomly, so that I must stay aware
 - Death handling system  
 
 #### 🎨 Mockup   
-![flashing tiles](../pics/Mockup/[FTL]Mockup_Tiles.jpg) 
+![flashing tiles](../images/Mockup/[FTL]Mockup_Tiles.jpg) 
 
 ___
 
@@ -210,7 +210,7 @@ As a player, I want to be able to use a flashlight, so that I can find my ennemi
 - Game environment
 
 #### 🎨 Mockup   
-![Flashlights](../pics/Mockup/[FTL]Mockup_flashlight.jpg)
+![Flashlights](../images/Mockup/[FTL]Mockup_flashlight.jpg)
 
 ___
 
@@ -299,7 +299,7 @@ As a player, I want to see a scoreboard, so that I can track my performance and 
 - UI system (to display and update the scoreboard in real time)  
 
 #### 🎨 Mockup   
-![Scoreboard in game](../pics/Mockup/[FTL]Mockup_Scoreboard.jpg)
+![Scoreboard in game](../images/Mockup/[FTL]Mockup_Scoreboard.jpg)
 ___
 
 ## 🛠️ Management
@@ -433,7 +433,7 @@ As a new player, I want to create an account, so that I can save my progress.
 - Email service (if email verification is required)  
 
 #### 🎨 Mockup   
-![index](../pics/Mockup/[FTL]Mockup_Index.jpg)
+![index](../images/Mockup/[FTL]Mockup_Index.jpg)
 
 
 ---
