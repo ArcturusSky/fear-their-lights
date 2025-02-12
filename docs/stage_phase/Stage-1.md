@@ -66,7 +66,7 @@ Then we discussed the main functionnalities "MVP":
   - ⏱️ **Time**: Game time management.
   - 🔦 **Lighting**: Flashlight for each player since the map is in the dark.
   - 🏆 **Scoreboard**: Display of scores in real time.
-  - 🎨 **Animations and pixel art design**: Engaging visual aesth
+  - 🎨 **Basic gamedesign**: Basic aesthetic to begin with.
   
 - 🖥️ **Non-Game Features:**
   - 📊 **Navigation menu**: Smooth and intuitive user interface.
