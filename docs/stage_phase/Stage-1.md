@@ -48,8 +48,8 @@ We didn't needed really to scored them since we quickly ended up choosing what w
 - Tripadvisor of toilet: Doeable alone and not very interesting, keept for personnal project by Arc since it was my first idea
 - Light Worms (kinda selected, see below)
 - Orbital Chaos: rejected because managing gravity and physics can be very tricky and lead to lot of complexity
-- Tidal Clash: Linda the same about the water and also, seen and seen again.
-- Garden Cooperative: To have something **interesting** the MVP would need a LOT of various fonctionnalities, far mor than our chosen solution.
+- Tidal Clash: Kinda the same about the water and also, seen and seen again.
+- Garden Cooperative: To have something **interesting** the MVP would need a LOT of various fonctionnalities, far more than our chosen solution.
 
 "Winner": Light worms
 

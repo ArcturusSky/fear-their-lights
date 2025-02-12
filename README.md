@@ -26,7 +26,7 @@ The originality of this game lies in the addition of a survival horror touch. Un
   - ⏱️ **Timer**: Game time management.
   - 🔦 **Lighting**: Flashlight for each player since the map is in darkness.
   - 🏆 **Scoreboard**: Real-time score display.
-  - 🎨 **Pixel art animations and design**: Engaging visual aesthetic.
+  - 🎨 **Basic gamedesign**: Basic aesthetic to begin with.
 
 - 🖥️ **Non-Game Features:**
   - 📊 **Navigation menu**: Smooth and intuitive user interface.
