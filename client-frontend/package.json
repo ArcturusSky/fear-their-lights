@@ -1,0 +1,36 @@
+{
+  "name": "client-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.7",
+    "@storybook/addon-interactions": "^8.5.7",
+    "@storybook/addon-svelte-csf": "^5.0.0-next.23",
+    "@storybook/blocks": "^8.5.7",
+    "@storybook/svelte": "^8.5.7",
+    "@storybook/svelte-vite": "^8.5.7",
+    "@storybook/test": "^8.5.7",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@tsconfig/svelte": "^5.0.4",
+    "storybook": "^8.5.7",
+    "svelte": "^5.19.6",
+    "svelte-check": "^4.1.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "eslint": "^9.20.1",
+    "ldrs": "^1.0.2",
+    "playwright": "^1.50.1"
+  }
+}

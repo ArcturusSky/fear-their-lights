@@ -1,0 +1,22 @@
+{
+  "files": [],
+  "allowArbitraryExtensions": true,
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "jsx": "react"
+    },
+    "include": [
+      "src/**/*",
+      "node_modules/svelte/types/runtime/**/*"
+    ]
+}
+  
